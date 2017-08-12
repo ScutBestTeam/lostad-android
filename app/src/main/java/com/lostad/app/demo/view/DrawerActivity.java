@@ -22,7 +22,7 @@ import org.xutils.x;
 
 
 public class DrawerActivity extends BaseActivity {
-dsadsad
+
     @ViewInject(R.id.toolbar)
     Toolbar toolbar;
     @ViewInject(R.id.drawer_layout)
