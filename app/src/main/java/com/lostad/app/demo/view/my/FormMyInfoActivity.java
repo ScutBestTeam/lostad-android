@@ -202,7 +202,7 @@ public class FormMyInfoActivity extends BaseActivity {
             case 0:
                 break;
             case 1:
-                d = data.getStringExtra(BaseFormActivity.KEY_VALUE);
+                d = data.getStringExtra("data");
                 mUserInfo.setNickname(d);
                 if (!Validator.isBlank(d)) {
                     update(mUserInfo);

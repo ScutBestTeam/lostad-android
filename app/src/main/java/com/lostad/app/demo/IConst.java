@@ -8,7 +8,7 @@ public class IConst {
    public static final String    DB_NAME                  = "tour_0107.db";
    public static final int       DB_VER_NUM               = 1;
 
-   public final static String URL_BASE                    = "http://192.168.2.104:8080";//"
+   public final static String URL_BASE                    = "http://192.168.1.103:8083/FH-WEB2";//"
    public final static String URL_SERVICE                 = URL_BASE+"/test/serviceBroker.do";//
 
    public final static String KEY_GIS_PROVINCE                 = "province";
@@ -34,11 +34,11 @@ public class IConst {
    public static final  String PACKAGE_TYPE_GROUP = "1004_TG";
    public static final  String API_PROTOCOL="";
 
-   public static  final String API_LOGIN          = "/user/login";
-   public static  final String API_REGISTER       = "/user/register";
-   public static  final String API_USER_UPDATE    = "/user/modify";
-   public static  final String API_PWD_UPDATE     = "/user/modifyPsw";//phone/old/new
-   public static  final String API_PWD_FIND       = "/user/resetPsw";//phone/new
+   public static  final String API_LOGIN          = "/appuser/login";
+   public static  final String API_REGISTER       = "/appuser/register";
+   public static  final String API_USER_UPDATE    = "/appuser/modify";
+   public static  final String API_PWD_UPDATE     = "/appuser/modifyPsw";//phone/old/new
+   public static  final String API_PWD_FIND       = "/appuser/resetPsw";//phone/new
 }
 /**
 http://121.42.25.194:88/vtSell/getGgxxApi

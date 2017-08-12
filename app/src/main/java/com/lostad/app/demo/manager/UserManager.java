@@ -7,10 +7,14 @@ import com.lostad.app.base.util.RequestUtil;
 import com.lostad.app.demo.entity.UserInfo4j;
 import com.lostad.applib.entity.BaseBeanRsult;
 import com.lostad.app.demo.entity.*;
+import com.zhy.http.okhttp.OkHttpUtils;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import okhttp3.Response;
 
 /**
  * @author sszvip@qq.com
@@ -36,27 +40,26 @@ public class UserManager
 	public LoginConfig4j login(String phone,String password) {
 		LoginConfig4j c = null;
 		try {
-//			Gson g = new Gson();
-//			String url = IConst.URL_BASE+IConst.API_LOGIN;
-//			Map map = new HashMap();
-//			map.put("phone", phone);
-//			map.put("password", password);
-//			String param = g.toJson(map);
-//			LogMe.d("param", param);
-//			String j = RequestUtil.postJson(url,null, param);
-//			LogMe.d("data", j);
-//			c = g.fromJson(j, LoginConfig4j.class);
-//			if(c==null ){
-//				c = new LoginConfig4j(false,"服务器返回数据异常");
-//			}
-			c = new LoginConfig4j(true,"登录成功");
-			c.data = new LoginConfig();
-			c.data.setToken("123");
-			c.data.setId("1");
-			c.data.setPhone(phone);
-			c.data.setPassword(password);
-            c.data.setNickname("Test NickName");
-			c.data.setName("real name");
+			Gson g = new Gson();
+			String url = IConst.URL_BASE+IConst.API_LOGIN;
+			Map map = new HashMap();
+			map.put("USERNAME", phone);
+			map.put("PASSWORD", password);
+			String param = g.toJson(map);
+			LogMe.d("param", param);
+			Response response =  OkHttpUtils
+					.post()//
+					.params(map)
+					.url(url)//
+					.build()//
+					.connTimeOut(5000)
+					.execute();
+			String j=response.body().string();
+			LogMe.d("data", j);
+			c = g.fromJson(j, LoginConfig4j.class);
+			if(c==null ){
+				c = new LoginConfig4j(false,"服务器返回数据异常");
+		}
 		} catch (Exception e) {
 			c = new LoginConfig4j(false,"服务器返回数据异常！"+e.getMessage());
 			e.printStackTrace();
@@ -89,36 +92,37 @@ public class UserManager
 		return c;
 	}
 
-	/**
-	 * 注册
-	 * @param phone 手机号
-	 * @param password   密码
-	 * @return
-	 */
-	public BaseBeanRsult register(String phone,String password) {
-		BaseBeanRsult c = null;
-
-		Gson g = new Gson();
-		try {
-
-			Map map = new HashMap();
-			map.put("phone", phone);
-			map.put("password", password);
-
-			String param = g.toJson(map);
-			LogMe.d("param", param);
-			String j = RequestUtil.postJson("",null, param);
-			LogMe.d("data",j);
-			c = g.fromJson(j, BaseBeanRsult.class);
-			if(c==null ){
-				c = new BaseBeanRsult(false,"服务器返回数据异常");
-			}
-		} catch (Exception e) {
-			c = new BaseBeanRsult(false,"服务器返回数据异常！"+e.getMessage());
-			e.printStackTrace();
-		}
-		return c;
-	}
+//	/**
+//	 * 注册（弃用）
+//	 * @param phone 手机号
+//	 * @param password   密码
+//	 * @return
+//	 */
+//	public BaseBeanRsult register(String phone,String password) {
+//		BaseBeanRsult c = null;
+//
+//		Gson g = new Gson();
+//		try {
+//
+//			Map map = new HashMap();
+//			map.put("phone", phone);
+//			map.put("password", password);
+//
+//
+//			String param = g.toJson(map);
+//			LogMe.d("param", param);
+//			String j = RequestUtil.postJson("",null, param);
+//			LogMe.d("data",j);
+//			c = g.fromJson(j, BaseBeanRsult.class);
+//			if(c==null ){
+//				c = new BaseBeanRsult(false,"服务器返回数据异常");
+//			}
+//		} catch (Exception e) {
+//			c = new BaseBeanRsult(false,"服务器返回数据异常！"+e.getMessage());
+//			e.printStackTrace();
+//		}
+//		return c;
+//	}
 
 	public BaseBeanRsult findPwd(String phone,String password) {
 		BaseBeanRsult c = null;

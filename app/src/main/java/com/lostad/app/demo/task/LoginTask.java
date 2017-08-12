@@ -42,6 +42,7 @@ public class LoginTask extends AsyncTask<String, Integer, LoginConfig4j> {
 	protected LoginConfig4j doInBackground(String... params) {
 
 		LoginConfig4j mU4j = UserManager.getInstance().login(mLoginConfig.phone,mLoginConfig.password);
+		mU4j.data=mLoginConfig;
 		return mU4j;
 	}
 

@@ -62,26 +62,50 @@
 
             <LinearLayout
                 android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/et_register_email"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:layout_marginLeft="20dip"
+                    android:layout_marginRight="20dip"
+                    android:layout_marginTop="6dp"
+
+                    android:hint="邮箱"
+                    android:paddingLeft="16dip"
+                    android:password="true"
+                    android:textColor="#666666"
+                    android:textSize="18sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/et_register_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:layout_marginLeft="20dip"
+                    android:layout_marginRight="20dip"
+                    android:layout_marginTop="6dp"
+
+                    android:hint="昵称"
+                    android:paddingLeft="16dip"
+                    android:password="true"
+                    android:textColor="#666666"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:gravity="left"
                 android:paddingLeft="12dp" >
 
-                <CheckBox
-                    android:id="@+id/cb_tyxy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:text="我已阅读"
-                    android:textSize="@dimen/sp_content2" >
-                </CheckBox>
 
-                <TextView
-                    android:id="@+id/tv_protocol"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="《XXX协议》"
-                    android:textSize="@dimen/sp_content2" />
+
             </LinearLayout>
 
             <LinearLayout

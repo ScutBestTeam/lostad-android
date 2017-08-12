@@ -52,12 +52,12 @@ public class FindPwd1Activity extends BaseActivity {
 	}
 
 
-	@Event(R.id.tv_protocol)
-	private void onClickProtocal(View arg0) {
-		String url = IConst.URL_BASE + IConst.API_PROTOCOL;
-		Intent it = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-		startActivity(it);
-	}
+//	@Event(R.id.tv_protocol)
+//	private void onClickProtocal(View arg0) {
+//		String url = IConst.URL_BASE + IConst.API_PROTOCOL;
+//		Intent it = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+//		startActivity(it);
+//	}
 
 	@Event(R.id.btn_register)
 	private void onClickReg(View arg0) {

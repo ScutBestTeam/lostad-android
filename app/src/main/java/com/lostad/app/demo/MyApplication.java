@@ -16,6 +16,9 @@ import com.lostad.app.base.util.PrefManager;
 import com.lostad.app.demo.entity.UserInfo;
 import com.lostad.applib.BaseApplication;
 import com.lostad.applib.entity.ILoginConfig;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.cookie.CookieJarImpl;
+import com.zhy.http.okhttp.cookie.store.PersistentCookieStore;
 
 import org.xutils.DbManager;
 import org.xutils.ex.DbException;
@@ -23,6 +26,8 @@ import org.xutils.x;
 
 import java.io.File;
 import java.util.List;
+
+import okhttp3.OkHttpClient;
 
 /**
  * 存放全局变量
@@ -50,6 +55,14 @@ public class MyApplication extends BaseApplication implements AMapLocationListen
 		initLocation();
 		initDb();
 		mVibrator = (Vibrator) getApplicationContext().getSystemService(Service.VIBRATOR_SERVICE);
+		//okhttp cookies设置
+		CookieJarImpl cookieJar = new CookieJarImpl(new PersistentCookieStore(getApplicationContext()));
+		OkHttpClient okHttpClient = new OkHttpClient.Builder()
+				.cookieJar(cookieJar)
+				//其他配置
+				.build();
+
+		OkHttpUtils.initClient(okHttpClient);
 	}
 
 	private void initDb(){
