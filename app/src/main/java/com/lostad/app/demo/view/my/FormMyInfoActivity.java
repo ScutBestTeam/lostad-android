@@ -142,7 +142,7 @@ public class FormMyInfoActivity extends BaseActivity {
         i.putExtra(FormNumActivity.KEY_NULL_ABLE, false);
         startActivityForResult(i,3);
     }
-dsafsdfdsf
+
 
 
     @Event(R.id.ll_weight)
