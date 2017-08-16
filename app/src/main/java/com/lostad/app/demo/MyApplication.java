@@ -14,6 +14,7 @@ import com.lostad.app.base.AppConfig;
 import com.lostad.app.demo.entity.LoginConfig;
 import com.lostad.app.base.util.PrefManager;
 import com.lostad.app.demo.entity.UserInfo;
+import com.lostad.app.demo.manager.SysManager;
 import com.lostad.applib.BaseApplication;
 import com.lostad.applib.entity.ILoginConfig;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -194,17 +195,21 @@ public class MyApplication extends BaseApplication implements AMapLocationListen
 
 	private LocationManagerProxy mLocationManagerProxy;
 
-	@Override
-	public void quit(boolean isClearData) {
+	public  void dbquit() {
 		try {
-			if(isClearData){
-				getDb().delete(LoginConfig.class);
-			}
+			getDb().delete(LoginConfig.class);
 			System.exit(0);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+		@Override
+		public void quit(boolean isClearData){
+			if(isClearData){
+			SysManager.getInstance().logout(this);
+			}
+		}
+
 
 
 }

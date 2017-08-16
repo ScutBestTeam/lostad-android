@@ -85,6 +85,7 @@ public class Register0Activity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
     public void toNextActivity(String phone) {
         Intent i = new Intent(ctx, Register1Activity.class);
         i.putExtra("phone", phone);
@@ -114,6 +115,7 @@ public class Register0Activity extends BaseActivity {
         SysManager.getInstance().getVerifyCode(mPhone, Register0Activity.this);
     }
 
+    @Override
     public void startToRecordTime() {
         new Thread() {
             @Override
