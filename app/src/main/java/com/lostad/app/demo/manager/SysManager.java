@@ -214,7 +214,10 @@ public class SysManager {
                         }
                         @Override
                         public void onResponse(String response, int id) {
+                            Map result = new Gson().fromJson(response, HashMap.class);
+                            if(result.get("result").equals(true))
                             myApplication.dbquit();
+                            else Toast.makeText(myApplication,"注销失败",Toast.LENGTH_SHORT).show();
                         }
                     });
         } catch (Exception e) {
