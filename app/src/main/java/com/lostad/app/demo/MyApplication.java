@@ -10,11 +10,13 @@ import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationListener;
 import com.amap.api.location.LocationManagerProxy;
 import com.amap.api.location.LocationProviderProxy;
+import com.avos.avoscloud.AVOSCloud;
 import com.lostad.app.base.AppConfig;
 import com.lostad.app.demo.entity.LoginConfig;
 import com.lostad.app.base.util.PrefManager;
 import com.lostad.app.demo.entity.UserInfo;
 import com.lostad.app.demo.manager.SysManager;
+import com.lostad.app.demo.view.chatkitapplication.CustomUserProvider;
 import com.lostad.applib.BaseApplication;
 import com.lostad.applib.entity.ILoginConfig;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -28,6 +30,8 @@ import org.xutils.x;
 import java.io.File;
 import java.util.List;
 
+import cn.leancloud.chatkit.LCChatKit;
+import com.avos.avoscloud.im.v2.AVIMClient;
 import okhttp3.OkHttpClient;
 
 /**
@@ -43,6 +47,8 @@ public class MyApplication extends BaseApplication implements AMapLocationListen
 	private DbManager mDb;
 	private DbManager.DaoConfig mDaoConfig;
 	private static MyApplication instance;
+	private final String APP_ID = "dYRQ8YfHRiILshUnfFJu2eQM-gzGzoHsz";
+	private final String APP_KEY = "ye24iIK6ys8IvaISMC4Bs5WK";
     
     public static MyApplication getInstance() {  
         return instance;  
@@ -61,9 +67,14 @@ public class MyApplication extends BaseApplication implements AMapLocationListen
 		OkHttpClient okHttpClient = new OkHttpClient.Builder()
 				.cookieJar(cookieJar)
 				//其他配置
+
 				.build();
 
 		OkHttpUtils.initClient(okHttpClient);
+		LCChatKit.getInstance().setProfileProvider(CustomUserProvider.getInstance());
+		AVOSCloud.setDebugLogEnabled(true);
+		LCChatKit.getInstance().init(getApplicationContext(), APP_ID, APP_KEY);
+		AVIMClient.setAutoOpen(false);
 	}
 
 	private void initDb(){

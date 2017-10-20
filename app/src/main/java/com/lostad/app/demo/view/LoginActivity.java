@@ -7,7 +7,11 @@ import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.avos.avoscloud.im.v2.AVIMClient;
+import com.avos.avoscloud.im.v2.AVIMException;
+import com.avos.avoscloud.im.v2.callback.AVIMClientCallback;
 import com.lostad.app.base.util.EffectUtil;
 import com.lostad.app.base.util.PrefManager;
 import com.lostad.app.base.view.BaseActivity;
@@ -21,6 +25,8 @@ import com.lostad.applib.util.Validator;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
+
+import cn.leancloud.chatkit.LCChatKit;
 
 public class LoginActivity extends BaseActivity {
     @ViewInject(R.id.et_phone)
@@ -191,7 +197,7 @@ public class LoginActivity extends BaseActivity {
     @Event(R.id.btn_login)
     private void onClickLoginByPhone(View v) {
 
-        String username = et_phone.getText().toString();
+        final String username = et_phone.getText().toString();
         String pwd = et_password.getText().toString();
         if (Validator.isBlank(username)) {
             et_phone.requestFocus();
@@ -208,6 +214,7 @@ public class LoginActivity extends BaseActivity {
         }
         LoginConfig mLoginConfig = new LoginConfig();
         mLoginConfig.setPhone(username);
+        mLoginConfig.setId(username);
         if (Validator.isBlank(pwd)) {
             et_password.setError(Html.fromHtml("<font color=#FFFFFF>请输入验密码</font>"));
             et_password.requestFocus();
@@ -221,7 +228,19 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onCallback(Boolean success) {
                 if (success) {
-                    finish();
+                    LCChatKit.getInstance().open(username, new AVIMClientCallback() {
+                        @Override
+                        public void done(AVIMClient avimClient, AVIMException e) {
+                            if (null == e) {
+                                Intent i = new Intent(LoginActivity.this,MainActivity.class);
+                                startActivity(i);
+                                finish();
+
+                            } else {
+                                Toast.makeText(LoginActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
                 }
             }
         });

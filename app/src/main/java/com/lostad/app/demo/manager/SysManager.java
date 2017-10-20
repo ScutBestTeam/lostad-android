@@ -217,7 +217,7 @@ public class SysManager {
                             Map result = new Gson().fromJson(response, HashMap.class);
                             if(result.get("result").equals(true))
                             myApplication.dbquit();
-                            else Toast.makeText(myApplication,"注销失败",Toast.LENGTH_SHORT).show();
+                            else myApplication.dbquit();
                         }
                     });
         } catch (Exception e) {

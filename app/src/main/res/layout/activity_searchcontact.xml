@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <SearchView
+        android:id="@+id/search_contact_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:queryHint="请输入搜索联系人的账号" />
+
+    <RelativeLayout
+        android:id="@+id/sc_relative"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/sc_img_friend_avatar"
+            style="@style/LCIMAvatar.Small"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp" />
+
+        <Button
+            android:id="@+id/sc_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加"
+            android:layout_marginRight="11dp"
+            android:layout_marginEnd="11dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/sc_friend_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toLeftOf="@id/sc_submit"
+            android:layout_toRightOf="@id/sc_img_friend_avatar"
+            android:singleLine="true"
+            android:text="name"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/sc_warn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="找不到该用户"/>
+</LinearLayout>

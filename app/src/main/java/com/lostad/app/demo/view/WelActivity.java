@@ -27,7 +27,7 @@ public class WelActivity extends Activity {
 					 e.printStackTrace();
 				 }
 
-				 Intent i = new Intent(WelActivity.this,MainActivity.class);
+				 Intent i = new Intent(WelActivity.this,LoginActivity.class);
 				 startActivity(i);
 				 finish();
 			 }

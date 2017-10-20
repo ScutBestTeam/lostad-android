@@ -8,9 +8,8 @@ public class IConst {
    public static final String    DB_NAME                  = "tour_0107.db";
    public static final int       DB_VER_NUM               = 1;
 
-   public final static String URL_BASE                    = "http://192.168.1.103:8083/FH-WEB2";//"
-   public final static String URL_SERVICE                 = URL_BASE+"/test/serviceBroker.do";//
-
+   public final static String URL_BASE                    = "http://47.94.194.219:8080/FH-WEB2";//"
+   public final static String URL_BASE2                   = "http://47.94.194.219:8080/test/";
    public final static String KEY_GIS_PROVINCE                 = "province";
    public final static String KEY_GIS_CITY                     = "city";
    public final static String KEY_GIS_DISTRICT                 = "district";
