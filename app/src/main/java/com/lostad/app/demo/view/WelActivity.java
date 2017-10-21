@@ -4,7 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.gson.Gson;
 import com.lostad.app.demo.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -15,6 +19,7 @@ public class WelActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_wel);
 		toMain();
+
 	}
 
 	private void toMain(){

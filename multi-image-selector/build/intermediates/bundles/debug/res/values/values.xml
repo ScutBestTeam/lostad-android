@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="folder_cover_size">72dp</dimen>
+    <dimen name="image_size">90dp</dimen>
+    <dimen name="space_size">2dp</dimen>
+    <string name="folder_all">All Images</string>
+    <string name="msg_amount_limit">Select images amount is limit</string>
+    <string name="msg_no_camera">No system camera found</string>
+    <string name="preview">Preview</string>
+    <string name="title_activity_preview_pictures">PreviewPicturesActivity</string>
+</resources>

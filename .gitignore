@@ -28,3 +28,7 @@ captures/
 .idea/libraries
 # Keystore files
 *.jks
+.svn/entries
+.svn/format
+*.svn-base
+*.iml

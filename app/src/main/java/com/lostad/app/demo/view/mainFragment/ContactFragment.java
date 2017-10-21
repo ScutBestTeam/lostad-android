@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.lostad.app.base.view.fragment.BaseFragment;
 import com.lostad.app.demo.IConst;
 import com.lostad.app.demo.MyApplication;
@@ -21,6 +22,7 @@ import com.lostad.app.demo.view.chatkitapplication.MembersAdapter;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -98,7 +100,8 @@ public class ContactFragment extends BaseFragment {
                 @Override
                 public void onResponse(String response, int id) {
                   List<LCChatKitUser> contacts ;
-                  contacts = new Gson().fromJson(response, List.class);
+                  Type type = new TypeToken<List<LCChatKitUser>>() {}.getType();
+                  contacts = new Gson().fromJson(response, type);
                   itemAdapter.setMemberList(contacts);
                   itemAdapter.notifyDataSetChanged();
                 }

@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\default_error.png",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\default_error.png"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\btn_unselected.png",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\btn_unselected.png"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\icon_photo_choice.png",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\icon_photo_choice.png"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\asv.png",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\asv.png"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\btn_selected.png",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\btn_selected.png"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\default_check.png",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\default_check.png"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\asy.png",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\asy.png"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\text_indicator.png",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\text_indicator.png"
+    }
+]
