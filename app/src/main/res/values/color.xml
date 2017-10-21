@@ -95,4 +95,14 @@
     <!-- layoutRipple 的波纹色 淡蓝色 -->
     <color name="left_item_color">#0000ee</color>
     <color name="corner_border_color">#F3F4F3</color>
+
+    <color name="grey">#777777</color>
+    <color name="emoji_line">#ffcbc9ca</color>
+    <color name="bg_grey">#f5f5f5</color>
+
+    <!-- tweets detail color -->
+    <color name="time_font_black">#dddddd</color>
+    <color name="content_font_black">#737373</color>
+    <color name="name_font_black">#a3a3a3</color>
+    <color name="font_black_9">#999999</color>
 </resources>  

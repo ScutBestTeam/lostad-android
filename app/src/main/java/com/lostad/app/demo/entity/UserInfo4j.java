@@ -3,7 +3,7 @@ package com.lostad.app.demo.entity;
 import com.lostad.applib.entity.BaseBeanRsult;
 
 import java.util.List;
-
+import com.lostad.app.demo.Model.UserInfo;
 /**
  * Tour
  */

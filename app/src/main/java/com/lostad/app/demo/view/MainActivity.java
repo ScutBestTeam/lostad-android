@@ -22,8 +22,8 @@ import com.lostad.app.demo.MyApplication;
 import com.lostad.app.demo.R;
 import com.lostad.app.demo.view.mainFragment.ContactFragment;
 import com.lostad.app.demo.view.mainFragment.IntegrationFragment;
+import com.lostad.app.demo.view.mainFragment.IntegrationFragmentDiscover;
 import com.lostad.app.demo.view.mainFragment.IntegrationFragment1;
-import com.lostad.app.demo.view.mainFragment.IntegrationFragment2;
 import com.lostad.app.demo.view.mainFragment.SettingsFragment;
 import com.zxing.view.CaptureActivity;
 
@@ -102,7 +102,7 @@ public class MainActivity extends BaseActivity {
                 fragment.setArguments(b1);
                 break;
             case R.id.rb_2:
-                fragment = new IntegrationFragment2();
+                fragment = new IntegrationFragmentDiscover();
                 Bundle b2 = new Bundle();
                 b2.putString("type", "1");
                 fragment.setArguments(b2);

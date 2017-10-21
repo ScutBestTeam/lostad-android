@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 /**
  * 新鲜事
- * Created by zhaokaiqiang on 15/4/24.
  */
 public class FreshNews implements Serializable {
 

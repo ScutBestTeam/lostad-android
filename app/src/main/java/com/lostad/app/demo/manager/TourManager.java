@@ -11,11 +11,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author sszvip@qq.com
- * @date   2015-10-21
- *
- */
 public class TourManager
 {
 	private static TourManager instance;
