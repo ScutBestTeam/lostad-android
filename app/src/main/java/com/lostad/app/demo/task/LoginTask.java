@@ -13,10 +13,7 @@ import com.lostad.applib.core.MyCallback;
 import com.lostad.applib.util.DialogUtil;
 
 /**
- * 
  * 登录异步任务.
- * 
- * @author sszvip
  */
 @SuppressLint("NewApi")
 public class LoginTask extends AsyncTask<String, Integer, LoginConfig4j> {

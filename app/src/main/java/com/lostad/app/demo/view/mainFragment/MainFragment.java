@@ -74,7 +74,8 @@ public class MainFragment extends BaseFragment {
                 fragment = new IntegrationFragment();
                 break;
             case R.id.rb_1:
-                fragment = new IntegrationFragment1();
+                fragment = new IntegrationFragmentDiscover();
+                //fragment = new IntegrationFragment1();
                 Bundle b1 = new Bundle();
                 b1.putString("type", "0");
                 fragment.setArguments(b1);

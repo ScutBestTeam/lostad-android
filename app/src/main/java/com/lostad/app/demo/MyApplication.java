@@ -34,6 +34,24 @@ import cn.leancloud.chatkit.LCChatKit;
 import com.avos.avoscloud.im.v2.AVIMClient;
 import okhttp3.OkHttpClient;
 
+import android.app.Application;
+import android.content.Context;
+
+import com.avos.avoscloud.AVOSCloud;
+import com.avos.avoscloud.im.v2.AVIMClient;
+import com.avos.avoscloud.im.v2.AVIMException;
+import com.avos.avoscloud.im.v2.AVIMMessageManager;
+import com.avos.avoscloud.im.v2.AVIMTypedMessage;
+import com.avos.avoscloud.im.v2.callback.AVIMClientCallback;
+
+import org.greenrobot.eventbus.EventBus;
+
+import com.lostad.app.demo.event.SigninSuccessEvent;
+import com.lostad.app.demo.imcloud.AVImClientManager;
+import com.lostad.app.demo.imcloud.MessageHandler;
+import com.lostad.app.demo.Model.UserInfo;
+import com.lostad.app.demo.network.NetworkManager;
+
 /**
  * 存放全局变量
  * 
@@ -47,6 +65,13 @@ public class MyApplication extends BaseApplication implements AMapLocationListen
 	private DbManager mDb;
 	private DbManager.DaoConfig mDaoConfig;
 	private static MyApplication instance;
+
+
+	public static float sScale;
+	public static int sHeightPix;
+	private static Context context;
+	private static UserInfo currUser;
+
 	private final String APP_ID = "dYRQ8YfHRiILshUnfFJu2eQM-gzGzoHsz";
 	private final String APP_KEY = "ye24iIK6ys8IvaISMC4Bs5WK";
     
@@ -67,15 +92,43 @@ public class MyApplication extends BaseApplication implements AMapLocationListen
 		OkHttpClient okHttpClient = new OkHttpClient.Builder()
 				.cookieJar(cookieJar)
 				//其他配置
-
 				.build();
-
 		OkHttpUtils.initClient(okHttpClient);
-		LCChatKit.getInstance().setProfileProvider(CustomUserProvider.getInstance());
+//////////////////////////////////////////////////
+		context = getApplicationContext();
+		NetworkManager.initialize(context);
+//        Fresco.initialize(this);
+		sScale = getResources().getDisplayMetrics().density;
+		sHeightPix = getResources().getDisplayMetrics().heightPixels;
+			LCChatKit.getInstance().setProfileProvider(CustomUserProvider.getInstance());
 		AVOSCloud.setDebugLogEnabled(true);
 		LCChatKit.getInstance().init(getApplicationContext(), APP_ID, APP_KEY);
 		AVIMClient.setAutoOpen(false);
 	}
+	public static Context getAppContext(){
+		return context;
+	}
+
+	public static UserInfo getCurrUser() {
+		return currUser;
+	}
+
+	public static void setCurrUser(UserInfo currUser) {
+		MyApplication.currUser = currUser;
+
+		final String from = currUser.getUsername();
+		AVImClientManager.getInstance().open(from, new AVIMClientCallback() {
+			@Override
+			public void done(AVIMClient avimClient, AVIMException e) {
+				if(e == null){
+					EventBus.getDefault().post(new SigninSuccessEvent());
+				}
+			}
+		});
+	}
+
+
+
 
 	private void initDb(){
 		x.Ext.init(this);

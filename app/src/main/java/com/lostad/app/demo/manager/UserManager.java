@@ -8,6 +8,7 @@ import com.lostad.app.demo.entity.UserInfo4j;
 import com.lostad.applib.entity.BaseBeanRsult;
 import com.lostad.app.demo.entity.*;
 import com.zhy.http.okhttp.OkHttpUtils;
+import com.lostad.app.demo.Model.UserInfo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,11 +17,6 @@ import java.util.Map;
 
 import okhttp3.Response;
 
-/**
- * @author sszvip@qq.com
- * @date   2015-10-21
- *
- */
 public class UserManager
 {
 	private static UserManager instance;

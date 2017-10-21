@@ -21,7 +21,8 @@ import com.lostad.app.base.view.component.FormTextChinaeseActivity;
 import com.lostad.app.demo.IConst;
 import com.lostad.app.demo.R;
 import com.lostad.app.demo.entity.LoginConfig;
-import com.lostad.app.demo.entity.UserInfo;
+//import com.lostad.app.demo.entity.UserInfo;
+import com.lostad.app.demo.Model.UserInfo;
 import com.lostad.applib.core.MyCallback;
 import com.lostad.applib.util.DialogUtil;
 import com.lostad.applib.util.FileDataUtil;
@@ -58,6 +59,20 @@ public class FormMyInfoActivity extends BaseActivity {
     @ViewInject(R.id.tv_addr)
     private TextView tv_addr;
 
+    //赞杰追加
+    @ViewInject(R.id.tv_email)
+    private TextView tv_email;
+
+    @ViewInject(R.id.tv_birthday)
+    private TextView tv_birthday;
+
+    @ViewInject(R.id.tv_personalsign)
+    private TextView tv_personalsign;
+
+    @ViewInject(R.id.tv_school)
+    private TextView tv_school;
+
+
     private LoginConfig mUserInfo = new LoginConfig();
     private File mFileHead;
 
@@ -67,7 +82,7 @@ public class FormMyInfoActivity extends BaseActivity {
         setContentView(R.layout.activity_form_myinfo);
         x.view().inject(this);
         super.initToolBarWithBack(toolbar);
-        setTitle("个人资料");
+        setTitle("个人信息");
     }
 
     @Override
@@ -138,7 +153,7 @@ public class FormMyInfoActivity extends BaseActivity {
         i.putExtra(FormNumActivity.KEY_MAX_VALUE, 65);
         i.putExtra(FormNumActivity.KEY_MIN_VALUE, 14);
         i.putExtra("value", tv_age.getText());
-        i.putExtra("desc", "填写年龄,让系统帮助您匹配更合适的健身伙伴");
+        i.putExtra("desc", "填写年龄可以让系统帮助您匹配更合适的驴友哟");
         i.putExtra(FormNumActivity.KEY_NULL_ABLE, false);
         startActivityForResult(i,3);
     }
@@ -209,6 +224,7 @@ public class FormMyInfoActivity extends BaseActivity {
                 }
                 break;
             case 3:
+                tv_age.setText(data.getStringExtra("data"));
 //                d = data.getStringExtra(BaseFormActivity.KEY_VALUE);
 //                mUserInfo. = (d);
 //

@@ -1,1 +1,3 @@
-include ':app', ':lib_lostad',':leancloudchatkit'
+
+include ':app', ':lib_lostad', ':leancloudchatkit',':multi-image-selector', ':material-drawer-library'
+

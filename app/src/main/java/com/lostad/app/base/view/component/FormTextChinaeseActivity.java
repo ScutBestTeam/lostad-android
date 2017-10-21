@@ -43,6 +43,7 @@ public class FormTextChinaeseActivity extends BaseFormActivity {
 
 		x.view().inject(this);
 		super.initToolBarWithBack((Toolbar) findViewById(R.id.toolbar));
+		setTitle("修改昵称");
 
 		Intent i = getIntent();
         value = i.getStringExtra(KEY_VALUE);

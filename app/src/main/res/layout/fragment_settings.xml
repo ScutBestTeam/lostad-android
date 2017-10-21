@@ -189,7 +189,7 @@
             android:layout_width="fill_parent"
             android:layout_height="0.5dp"
             android:background="@color/bg_line_gray" />
-
+<!--赞杰不可见-->
         <LinearLayout
             android:id="@+id/ll_21"
             android:visibility="gone"
@@ -207,6 +207,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:focusable="false"
+                android:text="加东西咯"
                 android:textColor="@color/txt_gray"
                 android:textSize="@dimen/sp_content"/>
 
