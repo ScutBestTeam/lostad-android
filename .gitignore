@@ -31,3 +31,4 @@ captures/
 .svn/entries
 .svn/format
 *.svn-base
+*.iml
