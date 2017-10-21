@@ -13,9 +13,14 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.avos.avoscloud.im.v2.AVIMClient;
+import com.avos.avoscloud.im.v2.AVIMException;
+import com.avos.avoscloud.im.v2.callback.AVIMClientCallback;
 import com.lostad.app.base.view.BaseActivity;
 import com.lostad.app.base.view.fragment.BaseFragment;
+import com.lostad.app.demo.MyApplication;
 import com.lostad.app.demo.R;
+import com.lostad.app.demo.view.mainFragment.ContactFragment;
 import com.lostad.app.demo.view.mainFragment.IntegrationFragment;
 import com.lostad.app.demo.view.mainFragment.IntegrationFragmentDiscover;
 import com.lostad.app.demo.view.mainFragment.IntegrationFragment1;
@@ -24,6 +29,8 @@ import com.zxing.view.CaptureActivity;
 
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
+
+import cn.leancloud.chatkit.LCChatKit;
 
 public class MainActivity extends BaseActivity {
 
@@ -51,6 +58,16 @@ public class MainActivity extends BaseActivity {
         });
 
         changeFragment(R.id.rb_0);
+       String username= MyApplication.getInstance().getLoginConfig().getUserId();
+        LCChatKit.getInstance().open(username, new AVIMClientCallback() {
+            @Override
+            public void done(AVIMClient avimClient, AVIMException e) {
+                if (null == e) {
+                } else {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     private void changeFragment(int checkedId) {
@@ -79,9 +96,9 @@ public class MainActivity extends BaseActivity {
                 fragment = new IntegrationFragment();
                 break;
             case R.id.rb_1:
-                fragment = new IntegrationFragment1();
+                fragment = new ContactFragment();
                 Bundle b1 = new Bundle();
-                b1.putString("type", "0");
+                b1.putString("type", "1");
                 fragment.setArguments(b1);
                 break;
             case R.id.rb_2:

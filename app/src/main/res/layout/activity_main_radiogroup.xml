@@ -46,11 +46,9 @@
             android:button="@null"
             android:drawablePadding="2dp"
             android:drawableTop="@xml/tab_icon1"
-            android:gravity="center"
-            android:text="好友"
+            android:gravity="center"       
             android:textColor="@color/txt_gray"
-            android:textSize="@dimen/sp_content3" />
-
+            android:text="联系人" />
         <RadioButton
             android:id="@+id/rb_2"
             android:layout_width="wrap_content"

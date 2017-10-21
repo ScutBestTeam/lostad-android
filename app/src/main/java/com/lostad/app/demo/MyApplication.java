@@ -10,10 +10,13 @@ import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationListener;
 import com.amap.api.location.LocationManagerProxy;
 import com.amap.api.location.LocationProviderProxy;
+import com.avos.avoscloud.AVOSCloud;
 import com.lostad.app.base.AppConfig;
 import com.lostad.app.demo.entity.LoginConfig;
 import com.lostad.app.base.util.PrefManager;
-//import com.lostad.app.demo.entity.UserInfo;
+import com.lostad.app.demo.entity.UserInfo;
+import com.lostad.app.demo.manager.SysManager;
+import com.lostad.app.demo.view.chatkitapplication.CustomUserProvider;
 import com.lostad.applib.BaseApplication;
 import com.lostad.applib.entity.ILoginConfig;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -27,6 +30,8 @@ import org.xutils.x;
 import java.io.File;
 import java.util.List;
 
+import cn.leancloud.chatkit.LCChatKit;
+import com.avos.avoscloud.im.v2.AVIMClient;
 import okhttp3.OkHttpClient;
 
 import android.app.Application;
@@ -61,11 +66,14 @@ public class MyApplication extends BaseApplication implements AMapLocationListen
 	private DbManager.DaoConfig mDaoConfig;
 	private static MyApplication instance;
 
-/////////////////////////////////////////////////
+
 	public static float sScale;
 	public static int sHeightPix;
 	private static Context context;
 	private static UserInfo currUser;
+
+	private final String APP_ID = "dYRQ8YfHRiILshUnfFJu2eQM-gzGzoHsz";
+	private final String APP_KEY = "ye24iIK6ys8IvaISMC4Bs5WK";
     
     public static MyApplication getInstance() {  
         return instance;  
@@ -85,21 +93,17 @@ public class MyApplication extends BaseApplication implements AMapLocationListen
 				.cookieJar(cookieJar)
 				//其他配置
 				.build();
-
 		OkHttpUtils.initClient(okHttpClient);
-
 //////////////////////////////////////////////////
 		context = getApplicationContext();
-
 		NetworkManager.initialize(context);
 //        Fresco.initialize(this);
-
 		sScale = getResources().getDisplayMetrics().density;
 		sHeightPix = getResources().getDisplayMetrics().heightPixels;
-
-		AVOSCloud.initialize(this, "hmUYX9LRCEa7Of6kQrDVrzes-gzGzoHsz", "NdwBtQEQOmhwftwXMt0I9vn4");
-		AVIMClient.setOfflineMessagePush(true);
-		AVIMMessageManager.registerMessageHandler(AVIMTypedMessage.class, new MessageHandler());
+			LCChatKit.getInstance().setProfileProvider(CustomUserProvider.getInstance());
+		AVOSCloud.setDebugLogEnabled(true);
+		LCChatKit.getInstance().init(getApplicationContext(), APP_ID, APP_KEY);
+		AVIMClient.setAutoOpen(false);
 	}
 	public static Context getAppContext(){
 		return context;
@@ -255,17 +259,21 @@ public class MyApplication extends BaseApplication implements AMapLocationListen
 
 	private LocationManagerProxy mLocationManagerProxy;
 
-	@Override
-	public void quit(boolean isClearData) {
+	public  void dbquit() {
 		try {
-			if(isClearData){
-				getDb().delete(LoginConfig.class);
-			}
+			getDb().delete(LoginConfig.class);
 			System.exit(0);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+		@Override
+		public void quit(boolean isClearData){
+			if(isClearData){
+			SysManager.getInstance().logout(this);
+			}
+		}
+
 
 
 }

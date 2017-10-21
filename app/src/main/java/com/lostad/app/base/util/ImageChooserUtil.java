@@ -195,8 +195,7 @@ public class ImageChooserUtil {
 			intent.putExtra("return-data", true);
 			ctx.startActivityForResult(intent, requestCode);
 		}
-		
-		
+
 		public interface PicCallback{
 			void onPicSelected(Bitmap bitmap);
 		}
