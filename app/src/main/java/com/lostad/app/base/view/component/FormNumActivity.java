@@ -49,10 +49,11 @@ public class FormNumActivity extends BaseFormActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_form_edit_text);
+		setContentView(R.layout.activity_form_edit_age);
 
 		x.view().inject(this);
 		super.initToolBarWithBack((Toolbar) findViewById(R.id.toolbar));
+		setTitle("修改年龄");
 
 		Intent i = getIntent();
 		value = i.getStringExtra(KEY_VALUE);

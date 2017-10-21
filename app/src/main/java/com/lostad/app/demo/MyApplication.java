@@ -13,7 +13,7 @@ import com.amap.api.location.LocationProviderProxy;
 import com.lostad.app.base.AppConfig;
 import com.lostad.app.demo.entity.LoginConfig;
 import com.lostad.app.base.util.PrefManager;
-import com.lostad.app.demo.entity.UserInfo;
+//import com.lostad.app.demo.entity.UserInfo;
 import com.lostad.applib.BaseApplication;
 import com.lostad.applib.entity.ILoginConfig;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -29,6 +29,24 @@ import java.util.List;
 
 import okhttp3.OkHttpClient;
 
+import android.app.Application;
+import android.content.Context;
+
+import com.avos.avoscloud.AVOSCloud;
+import com.avos.avoscloud.im.v2.AVIMClient;
+import com.avos.avoscloud.im.v2.AVIMException;
+import com.avos.avoscloud.im.v2.AVIMMessageManager;
+import com.avos.avoscloud.im.v2.AVIMTypedMessage;
+import com.avos.avoscloud.im.v2.callback.AVIMClientCallback;
+
+import org.greenrobot.eventbus.EventBus;
+
+import com.lostad.app.demo.event.SigninSuccessEvent;
+import com.lostad.app.demo.imcloud.AVImClientManager;
+import com.lostad.app.demo.imcloud.MessageHandler;
+import com.lostad.app.demo.Model.UserInfo;
+import com.lostad.app.demo.network.NetworkManager;
+
 /**
  * 存放全局变量
  * 
@@ -42,6 +60,12 @@ public class MyApplication extends BaseApplication implements AMapLocationListen
 	private DbManager mDb;
 	private DbManager.DaoConfig mDaoConfig;
 	private static MyApplication instance;
+
+/////////////////////////////////////////////////
+	public static float sScale;
+	public static int sHeightPix;
+	private static Context context;
+	private static UserInfo currUser;
     
     public static MyApplication getInstance() {  
         return instance;  
@@ -63,7 +87,44 @@ public class MyApplication extends BaseApplication implements AMapLocationListen
 				.build();
 
 		OkHttpUtils.initClient(okHttpClient);
+
+//////////////////////////////////////////////////
+		context = getApplicationContext();
+
+		NetworkManager.initialize(context);
+//        Fresco.initialize(this);
+
+		sScale = getResources().getDisplayMetrics().density;
+		sHeightPix = getResources().getDisplayMetrics().heightPixels;
+
+		AVOSCloud.initialize(this, "hmUYX9LRCEa7Of6kQrDVrzes-gzGzoHsz", "NdwBtQEQOmhwftwXMt0I9vn4");
+		AVIMClient.setOfflineMessagePush(true);
+		AVIMMessageManager.registerMessageHandler(AVIMTypedMessage.class, new MessageHandler());
 	}
+	public static Context getAppContext(){
+		return context;
+	}
+
+	public static UserInfo getCurrUser() {
+		return currUser;
+	}
+
+	public static void setCurrUser(UserInfo currUser) {
+		MyApplication.currUser = currUser;
+
+		final String from = currUser.getUsername();
+		AVImClientManager.getInstance().open(from, new AVIMClientCallback() {
+			@Override
+			public void done(AVIMClient avimClient, AVIMException e) {
+				if(e == null){
+					EventBus.getDefault().post(new SigninSuccessEvent());
+				}
+			}
+		});
+	}
+
+
+
 
 	private void initDb(){
 		x.Ext.init(this);

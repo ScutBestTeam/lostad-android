@@ -76,7 +76,9 @@ public class Register0Activity extends BaseActivity {
                 et_vercode.setError("请输入验证码");
                 return true;
             }
-            if (Config.isTestMode) {
+            //未testmode赞杰
+            //if (Config.isTestMode) {
+            if (true) {
                 toNextActivity(phone);
             }
             checkVerCode(phone, vcode);

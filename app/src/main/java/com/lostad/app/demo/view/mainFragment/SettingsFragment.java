@@ -54,7 +54,8 @@ public class SettingsFragment extends BaseFragment {
 	public void onResume() {
 		super.onResume();
 		mLogin = getLoginConfig();
-		if(mLogin!=null){
+		//赞杰假装已经登录
+		/*if(mLogin!=null){
 			tv_name.setText(getLoginConfig().getNickname());
 			tv_phone.setText(getLoginConfig().getPhone());
 			btn_quit.setText("退出");
@@ -62,14 +63,21 @@ public class SettingsFragment extends BaseFragment {
 			tv_name.setText("未登陆");
 			tv_phone.setText("手机号未知");
 			btn_quit.setText("注册/登陆");
+		}*/
+		if(true){
+			tv_name.setText("赞杰");
+			tv_phone.setText("13632462321");
+			btn_quit.setText("退出");
 		}
 	}
 
 	@Event(R.id.ll_userinfo)
 	private void onClickUserInfo(View v){
-		if(mLogin==null){
+		//赞杰假装已经登录
+		/*if(mLogin==null){
              toLoginActivity();
-		}else{
+		}else{*/
+		if(true){
 			try {
 				Intent i =  new Intent(ctx, FormMyInfoActivity.class);
 				startActivity(i);
@@ -93,9 +101,11 @@ public class SettingsFragment extends BaseFragment {
 	}
 	@Event(R.id.ll_11)
 	private void onClick_ll_12(View v){
-		if(mLogin==null){
+		//赞杰假装已经登录
+		/*if(mLogin==null){
 			toLoginActivity();
-		}else {
+		}else {*/
+		if(true){
 			Intent i = new Intent(ctx, ListMyTourActivity.class);
 			startActivity(i);
 		}

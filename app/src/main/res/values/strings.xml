@@ -37,4 +37,10 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_list_my_order">ListMyOrderActivity</string>
     <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="hint_publish">发布招募</string>
+
+    <string name="error_network">啊呀，失败啦！</string>
+    <string name="send_tweet_success">动态发送成功</string>
+
 </resources>

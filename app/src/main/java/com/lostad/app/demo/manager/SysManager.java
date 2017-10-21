@@ -24,10 +24,6 @@ import java.util.Map;
 import okhttp3.Call;
 import okhttp3.Request;
 
-/**
- * @author sszvip@qq.com
- * @date 2015-10-21
- */
 public class SysManager {
     private static SysManager instance;
 

@@ -74,7 +74,6 @@
 
                     android:hint="邮箱"
                     android:paddingLeft="16dip"
-                    android:password="true"
                     android:textColor="#666666"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -92,7 +91,6 @@
 
                     android:hint="昵称"
                     android:paddingLeft="16dip"
-                    android:password="true"
                     android:textColor="#666666"
                     android:textSize="18sp" />
             </LinearLayout>

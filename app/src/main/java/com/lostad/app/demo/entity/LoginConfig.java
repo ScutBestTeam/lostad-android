@@ -36,6 +36,11 @@ public class LoginConfig implements Serializable,ILoginConfig {
 	public String name;
 	@Column(name="nickname")
 	public String nickname;
+
+	//赞杰添加
+	@Column(name="age")
+	public String age;
+
 	@Column(name="password")
 	public String password;
 	@Column(name="headUrl")
@@ -68,6 +73,18 @@ public class LoginConfig implements Serializable,ILoginConfig {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
+
+
+
+	//赞杰添加
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age ) {this.age = age;}
+
+
+
 
 	public LoginConfig() {
 	}

@@ -36,7 +36,8 @@
         android:icon="@mipmap/logo"
         android:label="@string/app_name"
         android:logo="@mipmap/logo"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        >
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="${CHANNEL_NAME}" />
