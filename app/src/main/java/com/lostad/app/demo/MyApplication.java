@@ -14,7 +14,6 @@ import com.avos.avoscloud.AVOSCloud;
 import com.lostad.app.base.AppConfig;
 import com.lostad.app.demo.entity.LoginConfig;
 import com.lostad.app.base.util.PrefManager;
-import com.lostad.app.demo.entity.UserInfo;
 import com.lostad.app.demo.manager.SysManager;
 import com.lostad.app.demo.view.chatkitapplication.CustomUserProvider;
 import com.lostad.applib.BaseApplication;
@@ -32,6 +31,8 @@ import java.util.List;
 
 import cn.leancloud.chatkit.LCChatKit;
 import com.avos.avoscloud.im.v2.AVIMClient;
+
+import de.greenrobot.event.EventBus;
 import okhttp3.OkHttpClient;
 
 import android.app.Application;
@@ -43,9 +44,6 @@ import com.avos.avoscloud.im.v2.AVIMException;
 import com.avos.avoscloud.im.v2.AVIMMessageManager;
 import com.avos.avoscloud.im.v2.AVIMTypedMessage;
 import com.avos.avoscloud.im.v2.callback.AVIMClientCallback;
-
-import org.greenrobot.eventbus.EventBus;
-
 import com.lostad.app.demo.event.SigninSuccessEvent;
 import com.lostad.app.demo.imcloud.AVImClientManager;
 import com.lostad.app.demo.imcloud.MessageHandler;
@@ -100,7 +98,7 @@ public class MyApplication extends BaseApplication implements AMapLocationListen
 //        Fresco.initialize(this);
 		sScale = getResources().getDisplayMetrics().density;
 		sHeightPix = getResources().getDisplayMetrics().heightPixels;
-			LCChatKit.getInstance().setProfileProvider(CustomUserProvider.getInstance());
+		LCChatKit.getInstance().setProfileProvider(CustomUserProvider.getInstance());
 		AVOSCloud.setDebugLogEnabled(true);
 		LCChatKit.getInstance().init(getApplicationContext(), APP_ID, APP_KEY);
 		AVIMClient.setAutoOpen(false);
