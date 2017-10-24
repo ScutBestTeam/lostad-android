@@ -7,7 +7,7 @@ public class CommentInfo {
     /**
      * result : success
      * comments : [{"comment_id":"8","friend_id":"17","tweet_id":"14","comment_content":"nice!","comment_time":"2015-12-06 03:42:12"},{"comment_id":"9","friend_id":"17","tweet_id":"14","comment_content":"nice!","comment_time":"2015-12-06 03:46:25"},{"comment_id":"10","friend_id":"17","tweet_id":"14","comment_content":"nice!","comment_time":"2015-12-06 03:47:02"},{"comment_id":"11","friend_id":"17","tweet_id":"14","comment_content":"nice!","comment_time":"2015-12-15 02:49:53"}]
-     */
+            */
 
     private String result;
     /**

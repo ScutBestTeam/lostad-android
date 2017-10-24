@@ -52,6 +52,7 @@ public class MembersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
       for (LCChatKitUser user : userList) {
         MemberItem item = new MemberItem();
         item.lcChatKitUser = user;
+        if(user.getUserName()==null) continue;
         item.sortContent = PinyinHelper.convertToPinyinString(user.getUserName(), "", PinyinFormat.WITHOUT_TONE);
         memberList.add(item);
       }

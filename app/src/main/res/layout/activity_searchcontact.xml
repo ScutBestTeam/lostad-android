@@ -3,10 +3,9 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <SearchView
-        android:id="@+id/search_contact_view"
+        android:id="@+id/sc_searchbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:iconifiedByDefault="false"
         android:queryHint="请输入搜索联系人的账号" />
 
     <RelativeLayout

@@ -26,8 +26,7 @@
         android:layout_gravity="top|end"
         android:layout_margin="10dp"
         android:src="@drawable/ic_add_white_36dp"
-        app:backgroundTint="@color/red"
-        />
+        app:backgroundTint="@color/red" />
     <!--
             app:backgroundTint="#fac800"-->
 </FrameLayout>

@@ -1,5 +1,6 @@
 package com.lostad.app.demo.view.mainFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -8,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 import com.google.gson.Gson;
@@ -16,11 +18,15 @@ import com.lostad.app.base.view.fragment.BaseFragment;
 import com.lostad.app.demo.IConst;
 import com.lostad.app.demo.MyApplication;
 import com.lostad.app.demo.R;
+import com.lostad.app.demo.view.LoginActivity;
+import com.lostad.app.demo.view.SearchContactActivity;
 import com.lostad.app.demo.view.chatkitapplication.CustomUserProvider;
 import com.lostad.app.demo.view.chatkitapplication.MemberLetterEvent;
 import com.lostad.app.demo.view.chatkitapplication.MembersAdapter;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
+
+import org.xutils.view.annotation.ViewInject;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -43,7 +49,7 @@ public class ContactFragment extends BaseFragment {
 
   private MembersAdapter itemAdapter;
   LinearLayoutManager layoutManager;
-
+  private Button btn_add_friends;
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     View view = inflater.inflate(R.layout.contact_fragment, container, false);
@@ -61,8 +67,15 @@ public class ContactFragment extends BaseFragment {
         refreshMembers();
       }
     });
-
     EventBus.getDefault().register(this);
+    btn_add_friends= (Button) view.findViewById(R.id.btn_add_friends);
+    btn_add_friends.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        Intent intent = new Intent(getActivity(), SearchContactActivity.class);
+        startActivity(intent);
+      }
+    });
     return view;
   }
 

@@ -3,6 +3,7 @@ package com.lostad.app.demo.view.chatkitapplication;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.lostad.app.demo.IConst;
 import com.lostad.app.demo.MyApplication;
 import com.lostad.app.demo.entity.LoginConfig;
@@ -14,6 +15,7 @@ import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -47,7 +49,8 @@ public class CustomUserProvider implements LCChatProfileProvider {
 
   @Override
   public void fetchProfiles(final List<String> list, final LCChatProfilesCallBack callBack) {
-    String url = IConst.URL_BASE;
+    String url = IConst.URL_BASE2;
+      url+="getUserDetail";
       String params=new Gson().toJson(list);
     OkHttpUtils
             .post()//
@@ -65,7 +68,8 @@ public class CustomUserProvider implements LCChatProfileProvider {
               @Override
               public void onResponse(String response, int id) {
                   List<LCChatKitUser> userList = new ArrayList<LCChatKitUser>();
-                  userList = new Gson().fromJson(response, List.class);
+                  Type type = new TypeToken<List<LCChatKitUser>>() {}.getType();
+                  userList = new Gson().fromJson(response, type);
                 callBack.done(userList, null);
               }
             });

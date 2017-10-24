@@ -70,8 +70,8 @@ public class MyApplication extends BaseApplication implements AMapLocationListen
 	private static Context context;
 	private static UserInfo currUser;
 
-	private final String APP_ID = "dYRQ8YfHRiILshUnfFJu2eQM-gzGzoHsz";
-	private final String APP_KEY = "ye24iIK6ys8IvaISMC4Bs5WK";
+	private final String APP_ID = "QCewswuadUQhNdoeL3E4WdxE-gzGzoHsz";
+	private final String APP_KEY = "e1zHmsFoJd99N9PieDJagDAm";
     
     public static MyApplication getInstance() {  
         return instance;  
@@ -111,19 +111,19 @@ public class MyApplication extends BaseApplication implements AMapLocationListen
 		return currUser;
 	}
 
-	public static void setCurrUser(UserInfo currUser) {
-		MyApplication.currUser = currUser;
-
-		final String from = currUser.getUsername();
-		AVImClientManager.getInstance().open(from, new AVIMClientCallback() {
-			@Override
-			public void done(AVIMClient avimClient, AVIMException e) {
-				if(e == null){
-					EventBus.getDefault().post(new SigninSuccessEvent());
-				}
-			}
-		});
-	}
+//	public static void setCurrUser(UserInfo currUser) {
+//		MyApplication.currUser = currUser;
+//
+//		final String from = currUser.getUsername();
+//		AVImClientManager.getInstance().open(from, new AVIMClientCallback() {
+//			@Override
+//			public void done(AVIMClient avimClient, AVIMException e) {
+//				if(e == null){
+//					EventBus.getDefault().post(new SigninSuccessEvent());
+//				}
+//			}
+//		});
+//	}
 
 
 
