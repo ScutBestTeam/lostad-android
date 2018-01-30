@@ -7,6 +7,11 @@ package cn.leancloud.chatkit;
 public final class LCChatKitUser {
   private String userId;
   private String avatarUrl;
+
+  public void setUserId(String userId) {
+    this.userId = userId;
+  }
+
   private String name;
 
   public LCChatKitUser(String userId, String userName, String avatarUrl) {
@@ -25,5 +30,9 @@ public final class LCChatKitUser {
 
   public String getUserName() {
     return name;
+  }
+
+  public void setAvatarUrl(String avatarUrl) {
+    this.avatarUrl = avatarUrl;
   }
 }

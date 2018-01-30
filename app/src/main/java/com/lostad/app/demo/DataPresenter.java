@@ -28,7 +28,7 @@ public class DataPresenter {
 
 
 
-    public static UserInfo requestUserInfoFromCache(int userId){
+    public static UserInfo requestUserInfoIDFromCache(String userId){
         return DatabaseManager.getUserInfoById(userId);
     }
 
@@ -61,13 +61,10 @@ public class DataPresenter {
                 });
     }
 
-    public static void requestUserInfoById(int userId, final GetUserInfo q){
-        UserInfo cookieInfo = DatabaseManager.getUserInfoById(userId);
-        if(cookieInfo.getResult().equals(NetworkManager.SUCCESS)){
-            q.onGetUserInfo(cookieInfo);
-        }
+    public static void requestUserInfoById(String userId, final GetUserInfo q){
 
-        NetworkManager.postRequestUserInfo(Integer.toString(userId),
+
+        NetworkManager.postRequestUserInfo(userId,
                 new ResponseListener<UserInfo>() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
@@ -79,6 +76,7 @@ public class DataPresenter {
 
                     @Override
                     public void onResponse(UserInfo info) {
+                        info.setResult(NetworkManager.SUCCESS);
                         if (info.getResult().equals(NetworkManager.SUCCESS)) {
                             q.onGetUserInfo(info);
                             DatabaseManager.addUserInfo(info);
@@ -96,7 +94,7 @@ public class DataPresenter {
 //        }
 
         //NetworkManager.postRequestFriendList(Integer.toString(MyApplication.getCurrUser().getId()),
-        NetworkManager.postRequestFriendList(MyApplication.getCurrUser().getId(),
+        NetworkManager.postRequestFriendList(MyApplication.getCurrUser().getUserId(),
                 new ResponseListener<FriendsInfo>() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
@@ -115,8 +113,8 @@ public class DataPresenter {
                 });
     }
 
-    public static void requestTweets(int userId, String tweetId, String timeType, final GetTweets q){
-        NetworkManager.postRequestTweets(Integer.toString(userId), tweetId, timeType
+    public static void requestTweets(String userId, String tweetId, String timeType, final GetTweets q){
+        NetworkManager.postRequestTweets(userId, tweetId, timeType
                 , new ResponseListener<TweetInfo>() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
@@ -133,9 +131,9 @@ public class DataPresenter {
                 });
     }
 
-    public static void sendTweet(int userId, String content, List<ImageInfo> images,
+    public static void sendTweet(String userId, String content, List<ImageInfo> images,
                                  final SendTweet q){
-        NetworkManager.postSendTweet(Integer.toString(userId), content, images,
+        NetworkManager.postSendTweet(userId, content, images,
                 new ResponseListener<ResultInfo>() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
@@ -205,7 +203,7 @@ public class DataPresenter {
 
     public static void addFriend(final int friendId, final AddFriend q){
         //NetworkManager.postAddFriend(Integer.toString(MyApplication.getCurrUser().getId()),
-        NetworkManager.postAddFriend(MyApplication.getCurrUser().getId(),
+        NetworkManager.postAddFriend(MyApplication.getCurrUser().getUserId(),
                 Integer.toString(friendId), new ResponseListener<ResultInfo>() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
@@ -225,9 +223,9 @@ public class DataPresenter {
                 });
     }
 
-    public static void getCommentList(int tweetId, final GetCommentList q){
+    public static void getCommentList(String tweetId, final GetCommentList q){
 
-        NetworkManager.postRequestComments(Integer.toString(tweetId),
+        NetworkManager.postRequestComments(tweetId,
                 new ResponseListener<CommentInfo>() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
@@ -244,9 +242,9 @@ public class DataPresenter {
         });
     }
 
-    public static void sendComment(int userId, int tweetId, String commentContent, final SendComment q){
+    public static void sendComment(int userId, String tweetId, String commentContent, final SendComment q){
 
-        NetworkManager.postCommentTweet(Integer.toString(userId), Integer.toString(tweetId),
+        NetworkManager.postCommentTweet(Integer.toString(userId), tweetId,
                 commentContent, new ResponseListener<ResultInfo>() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {

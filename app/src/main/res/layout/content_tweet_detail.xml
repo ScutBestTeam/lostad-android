@@ -19,9 +19,7 @@
         android:layout_above="@+id/inputLayout"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="1577dp"
-        android:layout_marginLeft="1577dp"
-        android:layout_marginBottom="164dp">
+        android:layout_marginBottom="1dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -81,7 +79,7 @@
             android:layout_marginEnd="13dp"
             android:layout_marginBottom="10dp"/>
 
-        <me.zq.youjoin.widget.enter.AutoHeightGridView
+        <com.lostad.app.demo.widget.enter.AutoHeightGridView
             android:id="@+id/gridView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -163,8 +161,7 @@
 
         <ListView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:id="@+id/comments_list"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
@@ -177,7 +174,7 @@
         android:id="@+id/inputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="144dp"
+        android:layout_marginBottom="15dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true" />

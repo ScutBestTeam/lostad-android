@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.lostad.app.demo.swipeitemlayout.SwipeItemLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
-    android:gravity="center_vertical">
+    android:layout_height="75dp">
+    <RelativeLayout
+        android:id="@+id/layout_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_itemType="main"
+        >
     <ImageView
         android:id="@+id/img_friend_avatar"
         style="@style/LCIMAvatar.Small"
@@ -20,4 +26,15 @@
         android:singleLine="true"
         android:text="name"
         android:textSize="20sp" />
-</RelativeLayout>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/tv_delete"
+            android:layout_height="match_parent"
+            android:layout_width="80dp"
+            android:gravity="center"
+            android:text="删 除"
+            android:textColor="#DDFFFFFF"
+            app:layout_itemType="menu"
+            />
+ </com.lostad.app.demo.swipeitemlayout.SwipeItemLayout>

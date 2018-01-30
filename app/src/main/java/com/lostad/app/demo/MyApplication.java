@@ -56,7 +56,7 @@ import com.lostad.app.demo.network.NetworkManager;
  * @author sszvip
  * 
  */
-public class MyApplication extends BaseApplication implements AMapLocationListener {
+public class MyApplication extends BaseApplication  implements AMapLocationListener {
 
 	public Vibrator mVibrator;
 	private LoginConfig mLoginConfig;
@@ -68,7 +68,7 @@ public class MyApplication extends BaseApplication implements AMapLocationListen
 	public static float sScale;
 	public static int sHeightPix;
 	private static Context context;
-	private static UserInfo currUser;
+	private static  ILoginConfig  currUser;
 
 	private final String APP_ID = "QCewswuadUQhNdoeL3E4WdxE-gzGzoHsz";
 	private final String APP_KEY = "e1zHmsFoJd99N9PieDJagDAm";
@@ -107,8 +107,11 @@ public class MyApplication extends BaseApplication implements AMapLocationListen
 		return context;
 	}
 
-	public static UserInfo getCurrUser() {
+	public   static  ILoginConfig getCurrUser() {
 		return currUser;
+	}
+	public   static  void setCurrUser(ILoginConfig iLoginConfig) {
+		currUser=iLoginConfig;
 	}
 
 //	public static void setCurrUser(UserInfo currUser) {

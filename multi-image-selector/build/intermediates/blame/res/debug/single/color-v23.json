@@ -2,5 +2,9 @@
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\color-v23\\abc_color_highlight_material.xml"
     }
 ]

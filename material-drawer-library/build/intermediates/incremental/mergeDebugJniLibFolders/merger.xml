@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Users\zanjie\Desktop\androidnow\travel_app\material-drawer-library\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="C:\Users\zanjie\Desktop\androidnow\travel_app\material-drawer-library\src\debug\jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="D:\androidwork\lostad-android\material-drawer-library\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="D:\androidwork\lostad-android\material-drawer-library\src\debug\jniLibs"/></dataSet></merger>

@@ -10,11 +10,11 @@ public class UserInfo implements Parcelable {
 
     //private int id;
     private String id;
-    private String username;
+    private String userId;
     public String name;
     public String nickname;
     public String pwd;
-    public String headUrl;
+    public String avatarUrl;
     public String phone;
     public String phoneType;
     public String loginType="0" ;
@@ -50,7 +50,7 @@ public class UserInfo implements Parcelable {
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.userId = username;
     }
 
     public void setEmail(String email) {
@@ -72,7 +72,7 @@ public class UserInfo implements Parcelable {
         this.name = name;
     }
     public String getNickname() {
-        return nickname;
+        return name;
     }
     public void setNickname(String nickname) {
         this.nickname = nickname;
@@ -84,10 +84,10 @@ public class UserInfo implements Parcelable {
         this.pwd = pwd;
     }
     public String getHeadUrl() {
-        return headUrl;
+        return avatarUrl;
     }
     public void setHeadUrl(String headUrl) {
-        this.headUrl = headUrl;
+        this.avatarUrl = headUrl;
     }
     public String getPhone() {
         return phone;
@@ -134,7 +134,7 @@ public class UserInfo implements Parcelable {
 
 
     public String getUsername() {
-        return username;
+        return userId;
     }
 
     public String getEmail() {
@@ -202,7 +202,7 @@ public class UserInfo implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         ///////////////////////////////////String
         dest.writeString(this.id);
-        dest.writeString(this.username);
+        dest.writeString(this.userId);
         dest.writeString(this.email);
         dest.writeString(this.result);
         dest.writeString(this.work);
@@ -220,7 +220,7 @@ public class UserInfo implements Parcelable {
     protected UserInfo(Parcel in) {
         ////////////////////////String
         this.id = in.readString();
-        this.username = in.readString();
+        this.userId = in.readString();
         this.email = in.readString();
         this.result = in.readString();
         this.work = in.readString();

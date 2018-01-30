@@ -162,7 +162,7 @@ public class DatabaseManager {
      * @return 私信记录
      */
     public static PrimsgInfo getPrimsgList(int friendId){
-        int userId = Integer.parseInt(MyApplication.getCurrUser().getId());
+        int userId = Integer.parseInt(MyApplication.getCurrUser().getUserId());
 
         String sql = "select * from "
                 + DatabaseHelper.TABLE_PRIMSG
@@ -184,7 +184,7 @@ public class DatabaseManager {
                 + " where " + DatabaseHelper.USER1_ID
                 + " = " + Integer.toString(friendId)
                 + " and " + DatabaseHelper.USER2_ID
-                + " = " + MyApplication.getCurrUser().getId();
+                + " = " + MyApplication.getCurrUser().getUserId();
         SQLiteDatabase db = DatabaseHelper.getInstance(MyApplication.getAppContext());
         if(parseFriendInfoCursor(db.rawQuery(sql, null)).size() != 0){
             return;
@@ -192,7 +192,7 @@ public class DatabaseManager {
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.USER1_ID, friendId);
-        contentValues.put(DatabaseHelper.USER2_ID, MyApplication.getCurrUser().getId());
+        contentValues.put(DatabaseHelper.USER2_ID, MyApplication.getCurrUser().getUserId());
 
         db.insert(DatabaseHelper.TABLE_FRIEND, null, contentValues);
 
@@ -223,14 +223,14 @@ public class DatabaseManager {
         contentValues.put(DatabaseHelper.USER_SEX, info.getSex());
         contentValues.put(DatabaseHelper.USER_BIRTH, info.getBirth());
         contentValues.put(DatabaseHelper.USER_LOCATION, info.getLocation());
-        contentValues.put(DatabaseHelper.USER_PHOTO, StringUtils.getPicUrlList(info.getImg_url()).get(0));
+        contentValues.put(DatabaseHelper.USER_PHOTO, StringUtils.getPicUrlList(info.getHeadUrl()).get(0));
         contentValues.put(DatabaseHelper.USER_SIGN, info.getUsersign());
         contentValues.put(DatabaseHelper.USER_WORK, info.getWork());
         contentValues.put(DatabaseHelper.USER_NICKNAME, info.getNickname());
         contentValues.put(DatabaseHelper.FOCUS_NUM, info.getFocus_num());
         contentValues.put(DatabaseHelper.FOLLOW_NUM, info.getFollow_num());
 
-        if(getUserInfoById(Integer.parseInt(info.getId())).getResult().equals(NetworkManager.SUCCESS)){
+        if(getUserInfoById(info.getId()).getResult().equals(NetworkManager.SUCCESS)){
             db.update(DatabaseHelper.TABLE_USER_INFO, contentValues,
                     DatabaseHelper.USER_ID + " = ?", new String[] {info.getId()});
         }else {
@@ -252,7 +252,7 @@ public class DatabaseManager {
         String type = StringUtils.getParamType(param);
         switch (type) {
             case NetworkManager.PARAM_TYPE_USER_ID:
-                return getUserInfoById(Integer.getInteger(param));
+                return getUserInfoById(param);
             case NetworkManager.PARAM_TYPE_USER_NAME:
                 return getUserInfoByUserName(param);
             case NetworkManager.PARAM_TYPE_USER_EMAIL:
@@ -267,10 +267,10 @@ public class DatabaseManager {
      * @param userId 要获取的用户的id
      * @return 获取到的用户信息，result字段为success表示获取成功，failure表示获取失败
      */
-    public static UserInfo getUserInfoById(int userId){
+    public static UserInfo getUserInfoById(String userId){
 
         String sql = "select * from " + DatabaseHelper.TABLE_USER_INFO
-                + " where " + DatabaseHelper.USER_ID + " = " + Integer.toString(userId);
+                + " where " + DatabaseHelper.USER_ID + " = " + userId;
 
         return getUserInfo(sql);
     }
@@ -370,8 +370,8 @@ public class DatabaseManager {
         if(cursor.moveToFirst()){
             do{
                 TweetInfo.TweetsEntity info = new TweetInfo.TweetsEntity();
-                info.setTweets_id(cursor.getInt(cursor.getColumnIndex(DatabaseHelper.TWEETS_ID)));
-                info.setFriend_id(cursor.getInt(cursor.getColumnIndex(DatabaseHelper.USER_ID)));
+                info.setTweets_id(cursor.getString(cursor.getColumnIndex(DatabaseHelper.TWEETS_ID)));
+                info.setFriend_id(cursor.getString(cursor.getColumnIndex(DatabaseHelper.USER_ID)));
                 info.setComment_num(cursor.getInt(cursor.getColumnIndex(DatabaseHelper.COMMENT_NUM)));
                 info.setUpvote_num(cursor.getInt(cursor.getColumnIndex(DatabaseHelper.UPVOTE_NUM)));
                 info.setTweets_content(cursor.getString(cursor.getColumnIndex(DatabaseHelper.TWEETS_CONTENT)));

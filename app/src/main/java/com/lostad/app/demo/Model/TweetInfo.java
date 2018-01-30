@@ -42,20 +42,20 @@ public class TweetInfo {
     }
 
     public static class TweetsEntity implements Parcelable {
-        private int friend_id;
-        private int tweets_id;
+        private String friend_id;
+        private String tweets_id;
         private int comment_num;
         private int upvote_num;
         private int upvote_status;
-        private String tweets_content;
-        private String tweets_img;
-        private String tweets_time;
+        private String tweet_content;
+        private String tweet_img;
+        private String tweet_time;
 
-        public void setFriend_id(int friend_id) {
+        public void setFriend_id(String friend_id) {
             this.friend_id = friend_id;
         }
 
-        public void setTweets_id(int tweets_id) {
+        public void setTweets_id(String tweets_id) {
             this.tweets_id = tweets_id;
         }
 
@@ -72,22 +72,22 @@ public class TweetInfo {
         }
 
         public void setTweets_content(String tweets_content) {
-            this.tweets_content = tweets_content;
+            this.tweet_content = tweets_content;
         }
 
         public void setTweets_img(String tweets_img) {
-            this.tweets_img = tweets_img;
+            this.tweet_img = tweets_img;
         }
 
         public void setTweets_time(String tweets_time) {
-            this.tweets_time = tweets_time;
+            this.tweet_time = tweets_time;
         }
 
-        public int getFriend_id() {
+        public String getFriend_id() {
             return friend_id;
         }
 
-        public int getTweets_id() {
+        public String getTweets_id() {
             return tweets_id;
         }
 
@@ -104,15 +104,15 @@ public class TweetInfo {
         }
 
         public String getTweets_content() {
-            return tweets_content;
+            return tweet_content;
         }
 
         public String getTweets_img() {
-            return tweets_img;
+            return tweet_img;
         }
 
         public String getTweets_time() {
-            return tweets_time;
+            return tweet_time;
         }
 
         @Override
@@ -122,28 +122,28 @@ public class TweetInfo {
 
         @Override
         public void writeToParcel(Parcel dest, int flags) {
-            dest.writeInt(this.friend_id);
-            dest.writeInt(this.tweets_id);
+            dest.writeString(this.friend_id);
+            dest.writeString(this.tweets_id);
             dest.writeInt(this.comment_num);
             dest.writeInt(this.upvote_num);
             dest.writeInt(this.upvote_status);
-            dest.writeString(this.tweets_content);
-            dest.writeString(this.tweets_img);
-            dest.writeString(this.tweets_time);
+            dest.writeString(this.tweet_content);
+            dest.writeString(this.tweet_img);
+            dest.writeString(this.tweet_time);
         }
 
         public TweetsEntity() {
         }
 
         protected TweetsEntity(Parcel in) {
-            this.friend_id = in.readInt();
-            this.tweets_id = in.readInt();
+            this.friend_id = in.readString();
+            this.tweets_id = in.readString();
             this.comment_num = in.readInt();
             this.upvote_num = in.readInt();
             this.upvote_status = in.readInt();
-            this.tweets_content = in.readString();
-            this.tweets_img = in.readString();
-            this.tweets_time = in.readString();
+            this.tweet_content = in.readString();
+            this.tweet_img = in.readString();
+            this.tweet_time = in.readString();
         }
 
         public static final Parcelable.Creator<TweetsEntity> CREATOR = new Parcelable.Creator<TweetsEntity>() {

@@ -17,6 +17,7 @@ android {
         versionName "1.0"
         //一是声明 CHANNEL_NAME 是可替换值的PlaceHolder，二是为其设置默认值。
         manifestPlaceholders = [CHANNEL_NAME: "Unspecified"]
+        multiDexEnabled true
     }
     //自定义签名信息
     signingConfigs {
@@ -80,4 +81,5 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.mcxiaoke.volley:library:1.0.19'
     compile 'com.github.ybq:Android-SpinKit:1.0.4'
+    compile 'com.android.support:multidex:1.0.1'
 }

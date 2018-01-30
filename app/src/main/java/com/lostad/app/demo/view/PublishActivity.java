@@ -85,7 +85,7 @@ public class PublishActivity extends BaseActivity
                     return;
                 }
                 showProgress(true);
-                DataPresenter.sendTweet(Integer.parseInt(MyApplication.getCurrUser().getId()),
+                DataPresenter.sendTweet(MyApplication.getCurrUser().getUserId(),
                         msgEdit.getText().toString(), mData, PublishActivity.this);
             }
         });

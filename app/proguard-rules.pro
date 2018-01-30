@@ -18,7 +18,6 @@
 #   public *;
 #}
 -keepattributes EnclosingMethod
-=======
 # proguard
 
 # ------------------------ leancloud sdk ------------------------
@@ -76,13 +75,23 @@
 -dontwarn org.xbill.**
 -keep class org.xbill.** { *;}
 
+-dontwarn butterknife.**
+-keep class butterknife.** { *;}
+-dontwarn com.umeng.**
+-keep class com.umeng.** { *;}
+-dontwarn com.avos.avoscloud.**
+-keep class com.avos.avoscloud.** { *;}
+-dontwarn demo.**
+-keep class demo.** { *;}
+-dontwarn okhttp3.**
+-keep class okhttp3.** { *;}
 -keepattributes *Annotation*
 
 
 # ------------------------ ChatKit ------------------------
--dontwarn cn.leancloud.chatkit.**
--keep class cn.leancloud.chatkit.** { *;}
--dontnote cn.leancloud.chatkit.**
+-dontwarn cn.leancloud.**
+-keep class cn.leancloud.** { *;}
+-dontnote cn.leancloud.**
 
 # ------------------------ picasso ------------------------
 -dontwarn com.squareup.picasso**

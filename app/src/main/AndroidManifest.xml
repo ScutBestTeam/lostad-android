@@ -61,7 +61,10 @@
             android:parentActivityName="com.lostad.app.base.view.BaseActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
+    <activity
+        android:name=".view.TweetDetailActivity"
+        android:parentActivityName="com.lostad.app.base.view.BaseActivity"
+        android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".view.MainActivity"
             android:parentActivityName="com.lostad.app.base.view.BaseActivity"
@@ -120,6 +123,7 @@
             android:name=".view.my.ListMyTourActivity"
             android:parentActivityName="com.lostad.app.base.view.BaseActivity"
             android:windowSoftInputMode="adjustResize|stateHidden" />
+
         <activity
             android:name=".view.article.FreshNewsDetailActivity"
             android:parentActivityName="com.lostad.app.base.view.BaseActivity"

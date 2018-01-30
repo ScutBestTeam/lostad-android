@@ -1,11 +1,19 @@
 [
     {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\default_error.png",
+        "source": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\default_error.png"
+    },
+    {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\default_error.png",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\default_error.png"
     },
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\btn_unselected.png",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\btn_unselected.png"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\asy.png",
+        "source": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\asy.png"
     },
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\icon_photo_choice.png",
@@ -16,6 +24,22 @@
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\asv.png"
     },
     {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\btn_unselected.png",
+        "source": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\btn_unselected.png"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\default_check.png",
+        "source": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\default_check.png"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\asv.png",
+        "source": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\asv.png"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\text_indicator.png",
+        "source": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\text_indicator.png"
+    },
+    {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\btn_selected.png",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\btn_selected.png"
     },
@@ -24,11 +48,19 @@
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\default_check.png"
     },
     {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\btn_selected.png",
+        "source": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\btn_selected.png"
+    },
+    {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\asy.png",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\asy.png"
     },
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\text_indicator.png",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\text_indicator.png"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\icon_photo_choice.png",
+        "source": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\icon_photo_choice.png"
     }
 ]

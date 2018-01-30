@@ -54,21 +54,16 @@ public class SettingsFragment extends BaseFragment {
 	public void onResume() {
 		super.onResume();
 		mLogin = getLoginConfig();
-		//赞杰假装已经登录
-		/*if(mLogin!=null){
-			tv_name.setText(getLoginConfig().getNickname());
+		if(mLogin!=null){
+			tv_name.setText(getLoginConfig().getName());
 			tv_phone.setText(getLoginConfig().getPhone());
 			btn_quit.setText("退出");
 		}else{
 			tv_name.setText("未登陆");
 			tv_phone.setText("手机号未知");
 			btn_quit.setText("注册/登陆");
-		}*/
-		if(true){
-			tv_name.setText("赞杰");
-			tv_phone.setText("13632462321");
-			btn_quit.setText("退出");
 		}
+
 	}
 
 	@Event(R.id.ll_userinfo)

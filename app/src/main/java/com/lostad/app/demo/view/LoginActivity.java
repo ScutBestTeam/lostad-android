@@ -15,6 +15,7 @@ import com.avos.avoscloud.im.v2.callback.AVIMClientCallback;
 import com.lostad.app.base.util.EffectUtil;
 import com.lostad.app.base.util.PrefManager;
 import com.lostad.app.base.view.BaseActivity;
+import com.lostad.app.demo.MyApplication;
 import com.lostad.app.demo.R;
 import com.lostad.app.demo.entity.LoginConfig;
 import com.lostad.app.demo.task.LoginTask;
@@ -212,7 +213,7 @@ public class LoginActivity extends BaseActivity {
             et_phone.setText("");
             return;
         }
-        LoginConfig mLoginConfig = new LoginConfig();
+        final LoginConfig mLoginConfig = new LoginConfig();
         mLoginConfig.setPhone(username);
         mLoginConfig.setId(username);
         if (Validator.isBlank(pwd)) {
@@ -241,6 +242,7 @@ public class LoginActivity extends BaseActivity {
                             }
                         }
                     });
+                    MyApplication.setCurrUser(mLoginConfig);
                 }
             }
         });

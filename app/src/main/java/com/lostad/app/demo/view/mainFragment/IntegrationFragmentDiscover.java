@@ -87,8 +87,7 @@ public class IntegrationFragmentDiscover extends BaseFragment
         tweetsRecyclerList.addOnItemTouchListener(new RecyclerItemClickListener(getActivity(), onItemClickListener));
         tweetsRecyclerList.setItemAnimator(new DefaultItemAnimator());
         tweetsRecyclerList.setAdapter(tweetsAdapter);
-
-        //refreshData();
+        refreshData();
 
         return view;
     }
@@ -109,7 +108,7 @@ public class IntegrationFragmentDiscover extends BaseFragment
 
     private void refreshData() {
         refresher.setRefreshing(true);
-        DataPresenter.requestTweets(Integer.parseInt(MyApplication.getCurrUser().getId()),
+        DataPresenter.requestTweets(MyApplication.getCurrUser().getUserId(),
                 "0", NetworkManager.TIME_NEW, IntegrationFragmentDiscover.this);
     }
 

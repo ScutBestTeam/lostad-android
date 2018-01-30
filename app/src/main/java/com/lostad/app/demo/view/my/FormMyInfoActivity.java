@@ -257,8 +257,8 @@ public class FormMyInfoActivity extends BaseActivity {
         if (config == null)
             return;
 
-        if (Validator.isNotEmpty(config.headUrl)) {
-            DownloadUtil.loadImage(this, iv_head, config.headUrl);
+        if (Validator.isNotEmpty(config.avatarUrl)) {
+            DownloadUtil.loadImage(this, iv_head, config.avatarUrl);
         }
         tv_nickname.setText(config.nickname);
         setSexValue(mUserInfo.sex);

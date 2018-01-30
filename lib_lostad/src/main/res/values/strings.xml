@@ -1,4 +1,5 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
     <string name="app_name">App Lib</string>
     <string name="title_prompt">友情提示</string>
     <string name="menu_settings">设置</string>

@@ -38,7 +38,7 @@ public class CommentInfo {
 
     public static class CommentsEntity {
         private int comment_id;
-        private int friend_id;
+        private String friend_id;
         private int tweet_id;
         private String comment_content;
         private String comment_time;
@@ -47,7 +47,7 @@ public class CommentInfo {
             this.comment_id = comment_id;
         }
 
-        public void setFriend_id(int friend_id) {
+        public void setFriend_id(String friend_id) {
             this.friend_id = friend_id;
         }
 
@@ -67,7 +67,7 @@ public class CommentInfo {
             return comment_id;
         }
 
-        public int getFriend_id() {
+        public String getFriend_id() {
             return friend_id;
         }
 

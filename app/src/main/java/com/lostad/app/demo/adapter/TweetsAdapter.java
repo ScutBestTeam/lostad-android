@@ -5,10 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
+import com.lostad.app.demo.Model.ResultInfo;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -96,38 +98,38 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             viewHolder.btnLike.setChecked(true);
         }
 
-//        viewHolder.btnLike.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton buttonView, final boolean isChecked) {
-//                NetworkManager.postUpvoteTweet(Integer.toString(
-//                        YouJoinApplication.getCurrUser().getId()),
-//                        Integer.toString(dataList.get(location).getTweets_id()),
-//                        new ResponseListener<ResultInfo>() {
-//                            @Override
-//                            public void onErrorResponse(VolleyError volleyError) {
-//                                LogUtils.e(TAG, volleyError.toString());
-//                            }
-//
-//                            @Override
-//                            public void onResponse(ResultInfo info) {
-//                                if(info.getResult().equals(NetworkManager.SUCCESS)){
-//                                    viewHolder.btnLike.setChecked(isChecked);
-//                                    int k = dataList.get(location).getUpvote_num();
-//                                    if(isChecked){
-//                                        k++;
-//                                    }else{
-//                                        k--;
-//                                    }
-//                                    dataList.get(location).setUpvote_num(k);
-//                                    viewHolder.likeCount.setText(Integer.toString(k));
-//                                }else{
-//                                    viewHolder.btnLike.setChecked(!isChecked);
-//                                }
-//                            }
-//                        });
-//
-//            }
-//        });
+        viewHolder.btnLike.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, final boolean isChecked) {
+                NetworkManager.postUpvoteTweet(
+                        MyApplication.getCurrUser().getUserId(),
+                        dataList.get(location).getTweets_id(),
+                        new ResponseListener<ResultInfo>() {
+                            @Override
+                            public void onErrorResponse(VolleyError volleyError) {
+                                LogUtils.e(TAG, volleyError.toString());
+                            }
+
+                            @Override
+                            public void onResponse(ResultInfo info) {
+                                if(info.getResult().equals(NetworkManager.SUCCESS)){
+                                    viewHolder.btnLike.setChecked(isChecked);
+                                    int k = dataList.get(location).getUpvote_num();
+                                    if(isChecked){
+                                        k++;
+                                    }else{
+                                        k--;
+                                    }
+                                    dataList.get(location).setUpvote_num(k);
+                                    viewHolder.likeCount.setText(Integer.toString(k));
+                                }else{
+                                    viewHolder.btnLike.setChecked(!isChecked);
+                                }
+                            }
+                        });
+
+            }
+        });
 
         UserInfo info = DataPresenter.requestUserInfoFromCache(dataList.get(location).getFriend_id());
         if(info.getResult().equals(NetworkManager.SUCCESS)
@@ -139,7 +141,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
                     .into(viewHolder.avatar);
             viewHolder.nickname.setText(info.getNickname());
         }else {
-            NetworkManager.postRequestUserInfo(Integer.toString(dataList.get(location).getFriend_id()),
+            NetworkManager.postRequestUserInfo(dataList.get(location).getFriend_id(),
                     new ResponseListener<UserInfo>() {
                         @Override
                         public void onErrorResponse(VolleyError volleyError) {
@@ -149,7 +151,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
                         @Override
                         public void onResponse(UserInfo info) {
                             Picasso.with(MyApplication.getAppContext())
-                                    .load(StringUtils.getPicUrlList(info.getImg_url()).get(0))
+                                    .load(StringUtils.getPicUrlList(info.getHeadUrl()).get(0))
                                     .resize(200, 200)
                                     .centerCrop()
                                     .into(viewHolder.avatar);

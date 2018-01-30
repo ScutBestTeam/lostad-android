@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v14\\fragment_multi_image.xml",
+        "source": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\layout-v14\\fragment_multi_image.xml"
+    },
+    {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v14\\fragment_multi_image.xml",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\layout-v14\\fragment_multi_image.xml"
     }

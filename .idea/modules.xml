@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/leancloudchatkit/leancloudchatkit.iml" filepath="$PROJECT_DIR$/leancloudchatkit/leancloudchatkit.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_lostad/lib_lostad.iml" filepath="$PROJECT_DIR$/lib_lostad/lib_lostad.iml" />
       <module fileurl="file://$PROJECT_DIR$/lostad-android.iml" filepath="$PROJECT_DIR$/lostad-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/material-drawer-library/material-drawer-library.iml" filepath="$PROJECT_DIR$/material-drawer-library/material-drawer-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/multi-image-selector/multi-image-selector.iml" filepath="$PROJECT_DIR$/multi-image-selector/multi-image-selector.iml" />
     </modules>
   </component>
 </project>

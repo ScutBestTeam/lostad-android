@@ -78,9 +78,9 @@ public class Register0Activity extends BaseActivity {
             }
             //未testmode赞杰
             //if (Config.isTestMode) {
-            if (true) {
-                toNextActivity(phone);
-            }
+//            if (true) {
+//                toNextActivity(phone);
+//            }
             checkVerCode(phone, vcode);
         }
 

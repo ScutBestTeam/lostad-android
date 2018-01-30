@@ -12,6 +12,34 @@
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color\\abc_secondary_text_material_dark.xml"
     },
     {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\default_text_color.xml",
+        "source": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\color\\default_text_color.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_search_url_text.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\color\\abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\color\\abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\folder_text_color.xml",
+        "source": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\color\\folder_text_color.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\color\\abc_secondary_text_material_light.xml"
+    },
+    {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_search_url_text.xml",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color\\abc_search_url_text.xml"
     },
@@ -20,8 +48,16 @@
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\color\\switch_thumb_material_dark.xml"
+    },
+    {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\switch_thumb_material_light.xml",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_secondary_text_material_light.xml",
@@ -30,6 +66,10 @@
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\folder_text_color.xml",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\color\\folder_text_color.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\default_text_color.xml",
@@ -42,5 +82,9 @@
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\switch_thumb_material_dark.xml",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color\\switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\color\\abc_primary_text_material_light.xml"
     }
 ]

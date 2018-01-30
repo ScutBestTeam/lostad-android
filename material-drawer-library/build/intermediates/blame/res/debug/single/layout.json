@@ -1,23 +1,15 @@
 [
     {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_radio.xml"
-    },
-    {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_profile_setting.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_profile_setting.xml"
-    },
-    {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_mode_close_item_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_dialog_title_material.xml"
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
     },
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
@@ -28,32 +20,36 @@
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_mini.xml"
     },
     {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_alert_dialog_material.xml"
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_activity_chooser_view.xml"
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_layout.xml"
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_media.xml"
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\notification_template_lines.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\notification_template_media.xml"
     },
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_menu_item_layout.xml"
     },
     {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_secondary.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_secondary.xml"
-    },
-    {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_lines.xml"
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_secondary.xml",
+        "source": "D:\\androidwork\\lostad-android\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_secondary.xml"
     },
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
@@ -68,20 +64,20 @@
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
-    },
-    {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_expanded_menu_layout.xml"
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\notification_media_action.xml"
     },
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\materialize.xml",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.mikepenz\\materialize\\0.5.1\\res\\layout\\materialize.xml"
     },
     {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_media_action.xml"
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_toggle.xml",
@@ -92,20 +88,52 @@
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\src\\main\\res\\layout\\material_drawer.xml"
     },
     {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\notification_template_big_media_narrow.xml"
+    },
+    {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_compact_header.xml",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_compact_header.xml"
     },
     {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_part_time.xml"
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_secondary_switch.xml",
+        "source": "D:\\androidwork\\lostad-android\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_secondary_switch.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_slider.xml",
+        "source": "D:\\androidwork\\lostad-android\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_slider.xml"
+    },
+    {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_divider.xml",
+        "source": "D:\\androidwork\\lostad-android\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_divider.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_profile_setting.xml",
+        "source": "D:\\androidwork\\lostad-android\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_profile_setting.xml"
     },
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_container.xml",
@@ -116,10 +144,6 @@
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
-    },
-    {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_recycler_view.xml",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_recycler_view.xml"
     },
@@ -128,20 +152,8 @@
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_content_include.xml"
-    },
-    {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
-    },
-    {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\select_dialog_singlechoice_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
@@ -164,6 +176,218 @@
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_mini.xml",
+        "source": "D:\\androidwork\\lostad-android\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_mini.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_secondary_toggle.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_secondary_toggle.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_switch.xml",
+        "source": "D:\\androidwork\\lostad-android\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_switch.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_primary.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_primary.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_profile.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_profile.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_header.xml",
+        "source": "D:\\androidwork\\lostad-android\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_header.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_recycler_view.xml",
+        "source": "D:\\androidwork\\lostad-android\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_recycler_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_profile_setting.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_profile_setting.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_compact_header.xml",
+        "source": "D:\\androidwork\\lostad-android\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_compact_header.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_section.xml",
+        "source": "D:\\androidwork\\lostad-android\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_section.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_secondary.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_secondary.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_lines.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_mini_profile.xml",
+        "source": "D:\\androidwork\\lostad-android\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_mini_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_container.xml",
+        "source": "D:\\androidwork\\lostad-android\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_container.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_secondary_toggle.xml",
+        "source": "D:\\androidwork\\lostad-android\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_secondary_toggle.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\materialize.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a6c25850083843cf220ca3c55569e21a082210e\\output\\res\\layout\\materialize.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_primary.xml",
+        "source": "D:\\androidwork\\lostad-android\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_primary.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_bar_title_item.xml"
     },
@@ -176,12 +400,12 @@
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_secondary_switch.xml"
     },
     {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_menu_layout.xml"
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer.xml",
+        "source": "D:\\androidwork\\lostad-android\\material-drawer-library\\src\\main\\res\\layout\\material_drawer.xml"
     },
     {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_secondary_toggle.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_secondary_toggle.xml"
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_toggle.xml",
+        "source": "D:\\androidwork\\lostad-android\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_toggle.xml"
     },
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
@@ -192,6 +416,10 @@
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_slider.xml"
     },
     {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_header.xml",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_header.xml"
     },
@@ -200,24 +428,20 @@
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_primary.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_primary.xml"
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_profile.xml",
+        "source": "D:\\androidwork\\lostad-android\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_profile.xml"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "C:\\Users\\skyluo\\.android\\build-cache\\7a37271305fb9a60db90b7ccf8e976929038a241\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_divider.xml",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_divider.xml"
     },
     {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_profile.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_profile.xml"
-    },
-    {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\material_drawer_item_mini_profile.xml",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\src\\main\\res\\layout\\material_drawer_item_mini_profile.xml"
-    },
-    {
-        "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
-        "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\material-drawer-library\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",

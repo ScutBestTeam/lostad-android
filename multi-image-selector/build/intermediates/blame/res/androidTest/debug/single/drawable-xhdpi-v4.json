@@ -1,15 +1,31 @@
 [
     {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\btn_back.png",
+        "source": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\btn_back.png"
+    },
+    {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ic_menu_back.png",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_menu_back.png"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\selector_indicator.png",
+        "source": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\selector_indicator.png"
     },
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\default_check_s.png",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\default_check_s.png"
     },
     {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ic_menu_back.png",
+        "source": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_menu_back.png"
+    },
+    {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\btn_back.png",
         "source": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\btn_back.png"
+    },
+    {
+        "merged": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\default_check_s.png",
+        "source": "D:\\androidwork\\lostad-android\\multi-image-selector\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\default_check_s.png"
     },
     {
         "merged": "C:\\Users\\zanjie\\Desktop\\androidnow\\travel_app\\multi-image-selector\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\selector_indicator.png",

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources> 
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
   	<!-- 登录提示 -->
 
-    <string name="app_name">Lostad Demo</string>
+    <string name="app_name">地鼠旅行租赁</string>
     <string name="message_invalid_username_password">错误的用户名或密码</string>
     <string name="message_server_unavailable">无法连接到服务器</string>
     <string name="message_user_disabled">用户被禁用</string>

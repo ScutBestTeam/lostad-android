@@ -173,7 +173,7 @@ public class TweetDetailActivity extends BaseActivity implements EmojiFragment.E
         String content = msgEdit.getText().toString();
         if(content.equals("")) return;
         msgEdit.setText("");
-        DataPresenter.sendComment(Integer.parseInt(MyApplication.getCurrUser().getId()), tweetsEntity.getTweets_id(),
+        DataPresenter.sendComment(Integer.parseInt(MyApplication.getCurrUser().getUserId()), tweetsEntity.getTweets_id(),
                 content, TweetDetailActivity.this);
     }
 
@@ -192,11 +192,11 @@ public class TweetDetailActivity extends BaseActivity implements EmojiFragment.E
                 MyApplication.getAppContext(), content,
                 tweetsEntity.getTweets_content()));
         time.setText(tweetsEntity.getTweets_time());
-//        if (tweetsEntity.getUpvote_status() == NetworkManager.UPVOTE_STATUS_NO) {
-//            btnLike.setChecked(false);
-//        } else {
-//            btnLike.setChecked(true);
-//        }
+        if (tweetsEntity.getUpvote_status() == NetworkManager.UPVOTE_STATUS_NO) {
+            btnLike.setChecked(false);
+        } else {
+            btnLike.setChecked(true);
+        }
 
         EventBus.getDefault().post(new RefreshLikeEvent(RefreshLikeEvent.TYPE_INIT));
 
@@ -210,8 +210,8 @@ public class TweetDetailActivity extends BaseActivity implements EmojiFragment.E
                     type = RefreshLikeEvent.TYPE_UPVOTE;
                 }
                // NetworkManager.postUpvoteTweet(Integer.toString(MyApplication.getCurrUser().getId()),
-                NetworkManager.postRequestIsUpvote(MyApplication.getCurrUser().getId(),
-                        Integer.toString(tweetsEntity.getTweets_id()), new ResponseListener<ResultInfo>() {
+                NetworkManager.postRequestIsUpvote(MyApplication.getCurrUser().getUserId(),
+                        tweetsEntity.getTweets_id(), new ResponseListener<ResultInfo>() {
                             @Override
                             public void onErrorResponse(VolleyError volleyError) {
 
@@ -235,8 +235,8 @@ public class TweetDetailActivity extends BaseActivity implements EmojiFragment.E
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(final RefreshLikeEvent event){
        // NetworkManager.postRequestIsUpvote(Integer.toString(MyApplication.getCurrUser().getId()),
-        NetworkManager.postRequestIsUpvote(MyApplication.getCurrUser().getId(),
-                Integer.toString(tweetsEntity.getTweets_id()), new ResponseListener<ResultInfo>() {
+        NetworkManager.postRequestIsUpvote(MyApplication.getCurrUser().getUserId(),
+                tweetsEntity.getTweets_id(), new ResponseListener<ResultInfo>() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
 
@@ -283,7 +283,7 @@ public class TweetDetailActivity extends BaseActivity implements EmojiFragment.E
     public void onGetUserInfo(UserInfo info) {
         if (info.getResult().equals(NetworkManager.SUCCESS)) {
             Picasso.with(MyApplication.getAppContext())
-                    .load(StringUtils.getPicUrlList(info.getImg_url()).get(0))
+                    .load(StringUtils.getPicUrlList(info.getHeadUrl()).get(0))
                     .resize(200, 200)
                     .centerCrop()
                     .into(avatar);

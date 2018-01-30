@@ -6,16 +6,26 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.lostad.app.demo.IConst;
+import com.lostad.app.demo.MyApplication;
 import com.lostad.app.demo.R;
+import com.lostad.app.demo.view.SearchContactActivity;
 import com.squareup.picasso.Picasso;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import cn.leancloud.chatkit.LCChatKitUser;
 import cn.leancloud.chatkit.activity.LCIMConversationActivity;
 import cn.leancloud.chatkit.utils.LCIMConstants;
 import cn.leancloud.chatkit.viewholder.LCIMCommonViewHolder;
+import okhttp3.Call;
 
 /**
  * Created by wli on 15/11/24.
@@ -24,17 +34,19 @@ public class ContactItemHolder extends LCIMCommonViewHolder<LCChatKitUser> imple
 
   TextView nameView;
   ImageView avatarView;
+  RelativeLayout maincontent;
+  Button button;
   OnItemClickListener onClickListener;
   public LCChatKitUser lcChatKitUser;
 
   public ContactItemHolder(Context context, ViewGroup root) {
-            super(context, root, R.layout.common_user_item);
+    super(context, root, R.layout.common_user_item);
     initView();
   }
   public ContactItemHolder(Context context, ViewGroup root,OnItemClickListener onClickListener) {
     super(context, root, R.layout.common_user_item);
-    itemView.setOnClickListener(this);
-
+    this.onClickListener=onClickListener;
+    initView();
   }
 
 
@@ -42,13 +54,20 @@ public class ContactItemHolder extends LCIMCommonViewHolder<LCChatKitUser> imple
   public void initView() {
     nameView = (TextView)itemView.findViewById(R.id.tv_friend_name);
     avatarView = (ImageView)itemView.findViewById(R.id.img_friend_avatar);
-
-    itemView.setOnClickListener(new View.OnClickListener() {
+    maincontent = (RelativeLayout)itemView.findViewById(R.id.layout_content);
+    button=(Button) itemView.findViewById(R.id.tv_delete);
+    maincontent.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
         Intent intent = new Intent(getContext(), LCIMConversationActivity.class);
         intent.putExtra(LCIMConstants.PEER_ID, lcChatKitUser.getUserId());
         getContext().startActivity(intent);
+      }
+    });
+    button.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+       onClickListener.onclick(view,lcChatKitUser);
       }
     });
   }
@@ -74,6 +93,6 @@ public class ContactItemHolder extends LCIMCommonViewHolder<LCChatKitUser> imple
 
   @Override
   public void onClick(View view) {
-    onClickListener.onclick(view,lcChatKitUser);
   }
+
 }

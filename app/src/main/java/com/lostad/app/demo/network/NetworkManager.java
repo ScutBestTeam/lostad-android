@@ -5,8 +5,10 @@ import android.content.Context;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,6 +26,8 @@ import com.lostad.app.demo.Model.UserInfo;
 import com.lostad.app.demo.util.LogUtils ;
 import com.lostad.app.demo.util.Md5Utils;
 import com.lostad.app.demo.util.StringUtils;
+
+import cn.leancloud.chatkit.LCChatKitUser;
 
 /**
  * 网络管理类，封装网络操作接口
@@ -53,7 +57,7 @@ public class NetworkManager {
     public static final String FRIEND_ID = "friend_id";
 
     public static final String PARAM_TYPE = "type";
-    public static final String PARAM = "param";
+    public static final String PARAM = "userList";
     public static final String PARAM_TYPE_USER_ID = "1";
     public static final String PARAM_TYPE_USER_NAME = "2";
     public static final String PARAM_TYPE_USER_EMAIL = "3";
@@ -77,17 +81,21 @@ public class NetworkManager {
      * 服务器接口URL
      */
 //    public static final String BASE_API_URL = "http://192.168.0.102:8088/youjoin-server/controllers/";
-    public static final String BASE_API_URL = "http://www.tekbroaden.com/youjoin-server/controllers/";
+//    public static final String BASE_API_URL = "http://www.tekbroaden.com/youjoin-server/controllers/";
 //    public static final String BASE_API_URL = "http://110.65.7.154:8088/youjoin-server/controllers/";
+public static final String BASE_API_URL = "http://47.94.194.219:8080/test/";
+    public static final String BASE_API_URL2="http://10.0.2.2:8083/untitled/";
     public static final String API_SIGN_IN = BASE_API_URL + "signin.php";
     public static final String API_SIGN_UP = BASE_API_URL + "signup.php";
     public static final String API_UPDATE_USERINFO = BASE_API_URL + "update_userinfo.php";
-    public static final String API_REQUEST_USERINFO = BASE_API_URL + "request_userinfo.php";
+    public static final String API_REQUEST_USERINFO = BASE_API_URL + "getUserDetail";
     public static final String API_ADD_FRIEND = BASE_API_URL + "add_friend.php";
     public static final String API_SEND_MESSAGE = BASE_API_URL + "send_message.php";
     public static final String API_RECEIVE_MESSAGE = BASE_API_URL + "receive_message.php";
-    public static final String API_SEND_TWEET = BASE_API_URL + "send_tweet.php";
-    public static final String API_REQUEST_TWEETS = BASE_API_URL + "get_tweets.php";
+//    public static final String API_SEND_TWEET = BASE_API_URL + "send_tweet.php";
+public static final String API_SEND_TWEET = BASE_API_URL+ "addMoment";
+//    public static final String API_SEND_TWEET = BASE_API_URL+ "addMoment";
+    public static final String API_REQUEST_TWEETS = BASE_API_URL + "getMoment";
     public static final String API_COMMENT_TWEET = BASE_API_URL + "comment_tweet.php";
     public static final String API_UPVOTE_TWEET = BASE_API_URL + "upvote_tweet.php";
     public static final String API_REQUEST_FRIEND_LIST = BASE_API_URL + "get_friendlist.php";
@@ -245,7 +253,9 @@ public class NetworkManager {
         Map<String, String> params = new HashMap<>();
         params.put(USER_ID, userId);
         params.put(TWEETS_CONTNET, content);
-        Request request = new PostUploadRequest(API_SEND_TWEET, images, params,
+//        Request request = new PostUploadRequest(API_SEND_TWEET, images, params,
+//                new TypeToken<ResultInfo>(){}.getType(), listener);
+        Request request = new PostObjectRequest(API_SEND_TWEET, params,
                 new TypeToken<ResultInfo>(){}.getType(), listener);
         NetworkManager.getRequestQueue().add(request);
     }
@@ -287,11 +297,13 @@ public class NetworkManager {
             return;
         }
         Map<String, String> params = new HashMap<>();
+            List requiredUser=new ArrayList();
+        requiredUser.add(param);
+        param=new Gson().toJson(requiredUser);
         params.put(PARAM, param);
-        params.put(PARAM_TYPE, type);
         Request request = new PostObjectRequest(
                 API_REQUEST_USERINFO,
-                params,new TypeToken<UserInfo>(){}.getType(),
+                params, new TypeToken<UserInfo>() {}.getType(),
                 listener);
         NetworkManager.getRequestQueue().add(request);
     }

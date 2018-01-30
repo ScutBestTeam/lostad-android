@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
     <string name="lcim_chatkit_name">LeanCloudChatKit</string>
 
     <string name="lcim_chat_bottom_record_layout_pressToRecord">按住录音</string>

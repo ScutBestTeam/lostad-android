@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 import com.google.gson.Gson;
@@ -18,11 +19,13 @@ import com.lostad.app.base.view.fragment.BaseFragment;
 import com.lostad.app.demo.IConst;
 import com.lostad.app.demo.MyApplication;
 import com.lostad.app.demo.R;
+import com.lostad.app.demo.swipeitemlayout.SwipeItemLayout;
 import com.lostad.app.demo.view.LoginActivity;
 import com.lostad.app.demo.view.SearchContactActivity;
 import com.lostad.app.demo.view.chatkitapplication.CustomUserProvider;
 import com.lostad.app.demo.view.chatkitapplication.MemberLetterEvent;
 import com.lostad.app.demo.view.chatkitapplication.MembersAdapter;
+import com.lostad.app.demo.view.chatkitapplication.OnItemClickListener;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -46,7 +49,6 @@ public class ContactFragment extends BaseFragment {
 
   protected SwipeRefreshLayout refreshLayout;
   protected RecyclerView recyclerView;
-
   private MembersAdapter itemAdapter;
   LinearLayoutManager layoutManager;
   private Button btn_add_friends;
@@ -55,16 +57,25 @@ public class ContactFragment extends BaseFragment {
     View view = inflater.inflate(R.layout.contact_fragment, container, false);
     refreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.contact_fragment_srl_list);
     recyclerView = (RecyclerView) view.findViewById(R.id.contact_fragment_rv_list);
+    recyclerView.addOnItemTouchListener(new SwipeItemLayout.OnSwipeItemTouchListener(getContext()));
     layoutManager = new LinearLayoutManager(getActivity());
     recyclerView.setLayoutManager(layoutManager);
     recyclerView.addItemDecoration(new LCIMDividerItemDecoration(getActivity()));
     itemAdapter = new MembersAdapter();
+    itemAdapter.setOnItemClickListener(new OnItemClickListener() {
+      @Override
+      public void onclick(View view, LCChatKitUser user) {
+       deleteFriend(user);
+      }
+    });
     refreshMembers();
     recyclerView.setAdapter(itemAdapter);
     refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
       @Override
       public void onRefresh() {
+          refreshLayout.setRefreshing(true);
         refreshMembers();
+
       }
     });
     EventBus.getDefault().register(this);
@@ -79,6 +90,7 @@ public class ContactFragment extends BaseFragment {
     return view;
   }
 
+
   @Override
   public void onDestroyView() {
     EventBus.getDefault().unregister(this);
@@ -92,6 +104,7 @@ public class ContactFragment extends BaseFragment {
   }
 
   private void refreshMembers() {
+      refreshLayout.setRefreshing(true);
       String id= MyApplication.getInstance().getLoginConfig().getUserId();
       //获取该用户联系人
       String url = IConst.URL_BASE2;
@@ -107,7 +120,9 @@ public class ContactFragment extends BaseFragment {
 
                 @Override
                 public void onError(Call call, Exception e, int id) {
-                  e.printStackTrace();
+
+                    Toast.makeText(getContext(),"网络错误",Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
                 }
 
                 @Override
@@ -117,6 +132,7 @@ public class ContactFragment extends BaseFragment {
                   contacts = new Gson().fromJson(response, type);
                   itemAdapter.setMemberList(contacts);
                   itemAdapter.notifyDataSetChanged();
+                    refreshLayout.setRefreshing(false);
                 }
               });
 
@@ -136,4 +152,40 @@ public class ContactFragment extends BaseFragment {
       }
     }
   }
-}
+  private void deleteFriend(LCChatKitUser lcChatKitUser) {
+    String hostId= MyApplication.getInstance().getLoginConfig().getUserId();
+    String friendId=lcChatKitUser.getUserId();
+    String url= IConst.URL_BASE2;
+    url+="deleteFriend";
+    OkHttpUtils
+            .post()//
+            .url(url)
+            .addParams("hostId",hostId)
+            .addParams("friendId",friendId)
+            .build()//
+            .connTimeOut(5000)
+            .execute(new StringCallback() {
+
+              @Override
+              public void onError(Call call, Exception e, int id) {
+                e.printStackTrace();
+                Toast.makeText(getContext(),"网络错误",Toast.LENGTH_SHORT).show();
+              }
+
+              @Override
+              public void onResponse(String response, int id) {
+                //返回处理结果，200表示处理完成，500服务器内部错误
+                String result = new Gson().fromJson(response, String.class);
+                if(result.equals("200")){
+                  Toast.makeText(getContext(),"成功删除好友",Toast.LENGTH_SHORT).show();
+                    refreshMembers();
+
+                }
+                if(result.equals("500")){
+                  Toast.makeText(getContext(),"删除好友失败",Toast.LENGTH_SHORT).show();
+                }
+              }
+            });
+
+  }
+  }
