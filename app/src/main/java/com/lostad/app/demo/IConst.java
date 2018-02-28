@@ -4,7 +4,7 @@ import android.os.Environment;
 
 
 public class IConst {
-   public final static String PATH_ROOT                   = Environment.getExternalStorageDirectory().toString()+ "/1_tour";
+   public final static String PATH_ROOT                   = Environment.getExternalStorageDirectory().toString()+ "/2_tour";
    public static final String    DB_NAME                  = "tour_0107.db";
    public static final int       DB_VER_NUM               = 1;
 

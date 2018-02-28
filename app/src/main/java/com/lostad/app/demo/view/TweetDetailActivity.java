@@ -173,7 +173,7 @@ public class TweetDetailActivity extends BaseActivity implements EmojiFragment.E
         String content = msgEdit.getText().toString();
         if(content.equals("")) return;
         msgEdit.setText("");
-        DataPresenter.sendComment(Integer.parseInt(MyApplication.getCurrUser().getUserId()), tweetsEntity.getTweets_id(),
+        DataPresenter.sendComment(MyApplication.getCurrUser().getUserId(), tweetsEntity.getTweets_id(),
                 content, TweetDetailActivity.this);
     }
 
@@ -181,6 +181,7 @@ public class TweetDetailActivity extends BaseActivity implements EmojiFragment.E
     public void onSendComment(ResultInfo info){
         if(info.getResult().equals(NetworkManager.SUCCESS)){
             DataPresenter.getCommentList(tweetsEntity.getTweets_id(), TweetDetailActivity.this);
+
         }
     }
 
@@ -192,42 +193,42 @@ public class TweetDetailActivity extends BaseActivity implements EmojiFragment.E
                 MyApplication.getAppContext(), content,
                 tweetsEntity.getTweets_content()));
         time.setText(tweetsEntity.getTweets_time());
-        if (tweetsEntity.getUpvote_status() == NetworkManager.UPVOTE_STATUS_NO) {
-            btnLike.setChecked(false);
-        } else {
-            btnLike.setChecked(true);
-        }
+//        if (tweetsEntity.getUpvote_status() == NetworkManager.UPVOTE_STATUS_NO) {
+//            btnLike.setChecked(false);
+//        } else {
+//            btnLike.setChecked(true);
+//        }
 
-        EventBus.getDefault().post(new RefreshLikeEvent(RefreshLikeEvent.TYPE_INIT));
+//        EventBus.getDefault().post(new RefreshLikeEvent(RefreshLikeEvent.TYPE_INIT));
 
-        btnLike.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final int type;
-                if(btnLike.isChecked()){
-                    type = RefreshLikeEvent.TYPE_UNUPVOTE;
-                }else{
-                    type = RefreshLikeEvent.TYPE_UPVOTE;
-                }
-               // NetworkManager.postUpvoteTweet(Integer.toString(MyApplication.getCurrUser().getId()),
-                NetworkManager.postRequestIsUpvote(MyApplication.getCurrUser().getUserId(),
-                        tweetsEntity.getTweets_id(), new ResponseListener<ResultInfo>() {
-                            @Override
-                            public void onErrorResponse(VolleyError volleyError) {
-
-                            }
-
-                            @Override
-                            public void onResponse(ResultInfo o) {
-                                if (o.getResult().equals(NetworkManager.SUCCESS)) {
-                                    EventBus.getDefault().post(new RefreshLikeEvent(type));
-                                }else{
-                                    Toast.makeText(TweetDetailActivity.this, getText(R.string.error_network), Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
-            }
-        });
+//        btnLike.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                final int type;
+//                if(btnLike.isChecked()){
+//                    type = RefreshLikeEvent.TYPE_UNUPVOTE;
+//                }else{
+//                    type = RefreshLikeEvent.TYPE_UPVOTE;
+//                }
+//               // NetworkManager.postUpvoteTweet(Integer.toString(MyApplication.getCurrUser().getId()),
+//                NetworkManager.postRequestIsUpvote(MyApplication.getCurrUser().getUserId(),
+//                        tweetsEntity.getTweets_id(), new ResponseListener<ResultInfo>() {
+//                            @Override
+//                            public void onErrorResponse(VolleyError volleyError) {
+//
+//                            }
+//
+//                            @Override
+//                            public void onResponse(ResultInfo o) {
+//                                if (o.getResult().equals(NetworkManager.SUCCESS)) {
+//                                    EventBus.getDefault().post(new RefreshLikeEvent(type));
+//                                }else{
+//                                    Toast.makeText(TweetDetailActivity.this, getText(R.string.error_network), Toast.LENGTH_SHORT).show();
+//                                }
+//                            }
+//                        });
+//            }
+//        });
 
         initEnter();
     }

@@ -4,6 +4,5 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/leancloudchatkit" vcs="svn" />
     <mapping directory="$PROJECT_DIR$/material-drawer-library" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$/multi-image-selector" vcs="svn" />
   </component>
 </project>

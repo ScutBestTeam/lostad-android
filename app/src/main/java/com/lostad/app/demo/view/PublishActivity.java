@@ -16,16 +16,21 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.github.ybq.android.spinkit.style.ThreeBounce;
+import com.luck.picture.lib.PictureSelector;
+import com.luck.picture.lib.config.PictureConfig;
+import com.luck.picture.lib.config.PictureMimeType;
+import com.luck.picture.lib.entity.LocalMedia;
 import com.squareup.picasso.Picasso;
 
 import org.greenrobot.eventbus.EventBus;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import me.nereo.multi_image_selector.MultiImageSelectorActivity;
+
 import com.lostad.app.demo.DataPresenter ;
 import com.lostad.app.demo.R;
 import com.lostad.app.demo.MyApplication ;
@@ -72,8 +77,17 @@ public class PublishActivity extends BaseActivity
         btnPopPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MultiImageSelectorActivity.startSelect(PublishActivity.this, 2, 9,
-                        MultiImageSelectorActivity.MODE_MULTI);
+                PictureSelector.create(PublishActivity.this)
+                        .openGallery(PictureMimeType.ofImage())//全部.PictureMimeType.ofAll()、图片.ofImage()、视频.ofVideo()、音频.ofAudio(
+                        .maxSelectNum(9)// 最大图片选择数量 int
+                        .imageSpanCount(4)// 每行显示个数 int
+                        .selectionMode(PictureConfig.MULTIPLE)// 多选 or 单选 PictureConfig.MULTIPLE or PictureConfig.SINGLE
+                        .previewImage(false)// 是否可预览图片 true or false
+                        .isCamera(true)// 是否显示拍照按钮 true or false
+                        .isZoomAnim(true)// 图片列表点击 缩放效果 默认true
+                        .sizeMultiplier(0.5f)// glide 加载图片大小 0~1之间 如设置 .glideOverride()无效
+                        .setOutputCameraPath("/CustomPath")// 自定义拍照保存路径,可不填
+                        .forResult(PictureConfig.CHOOSE_REQUEST);//结果回调onActivityResult code
             }
         });
 
@@ -173,21 +187,21 @@ public class PublishActivity extends BaseActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 2) {
+        if (requestCode == PictureConfig.CHOOSE_REQUEST) {
             if (resultCode == RESULT_OK) {
-                mSelectPath = data.getStringArrayListExtra(MultiImageSelectorActivity.EXTRA_RESULT);
+                List<LocalMedia> selectList = PictureSelector.obtainMultipleResult(data);
 //                StringBuilder sb = new StringBuilder();
                 layPhotoContainer.removeAllViews();
-                for (String p : mSelectPath) {
+                for (LocalMedia p : selectList) {
 //                    sb.append(p);
 //                    sb.append("\n");
 
                     View itemView = View.inflate(PublishActivity.this, R.layout.item_publish_photo, null);
                     ImageView img = (ImageView) itemView.findViewById(R.id.img);
-                    itemView.setTag(p);
+                    itemView.setTag(p.getPath());
 
                     Picasso.with(PublishActivity.this)
-                            .load(new File(p))
+                            .load(new File(p.getPath()))
                             .resize(200, 200)
                             .centerCrop()
                             .into(img);
@@ -197,7 +211,7 @@ public class PublishActivity extends BaseActivity
                                         LinearLayout.LayoutParams.WRAP_CONTENT));
                     }
 
-                    mData.add(new ImageInfo(p));
+                    mData.add(new ImageInfo(p.getPath()));
                 }
                 //yjPublishEdit.setText(sb.toString());
             }

@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.android.volley.VolleyError;
+import com.lostad.app.demo.network.ResponseListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -77,7 +79,23 @@ public class CommentsAdapter extends BaseAdapter {
                     .centerCrop()
                     .into(holder.avatar);
         }else {
-            LogUtils.e(TAG, "MessageListAdapter get pic failure");
+            NetworkManager.postRequestUserInfo(dataList.get(position).getFriend_id(),
+                    new ResponseListener<UserInfo>() {
+                        @Override
+                        public void onErrorResponse(VolleyError volleyError) {
+                            LogUtils.e(TAG, volleyError.toString());
+                        }
+
+                        @Override
+                        public void onResponse(UserInfo info) {
+                            Picasso.with(MyApplication.getAppContext())
+                                    .load(StringUtils.getPicUrlList(info.getHeadUrl()).get(0))
+                                    .resize(200, 200)
+                                    .centerCrop()
+                                    .into(holder.avatar);
+                            holder.nickname.setText(info.getNickname());
+                        }
+                    });
         }
 
         holder.nickname.setText(info.getNickname());

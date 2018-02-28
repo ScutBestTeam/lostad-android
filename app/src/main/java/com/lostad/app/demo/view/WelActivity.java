@@ -27,7 +27,7 @@ public class WelActivity extends Activity {
 			 @Override
 			 public void run() {
 				 try {
-					 sleep(1);
+					 sleep(5);
 				 } catch (InterruptedException e) {
 					 e.printStackTrace();
 				 }

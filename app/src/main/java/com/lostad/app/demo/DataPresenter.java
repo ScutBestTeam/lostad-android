@@ -242,9 +242,9 @@ public class DataPresenter {
         });
     }
 
-    public static void sendComment(int userId, String tweetId, String commentContent, final SendComment q){
+    public static void sendComment(String userId, String tweetId, String commentContent, final SendComment q){
 
-        NetworkManager.postCommentTweet(Integer.toString(userId), tweetId,
+        NetworkManager.postCommentTweet(userId, tweetId,
                 commentContent, new ResponseListener<ResultInfo>() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {

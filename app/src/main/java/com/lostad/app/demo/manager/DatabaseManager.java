@@ -232,7 +232,7 @@ public class DatabaseManager {
 
         if(getUserInfoById(info.getId()).getResult().equals(NetworkManager.SUCCESS)){
             db.update(DatabaseHelper.TABLE_USER_INFO, contentValues,
-                    DatabaseHelper.USER_ID + " = ?", new String[] {info.getId()});
+                    DatabaseHelper.USER_ID + " = ?", new String[] {info.getUsername()});
         }else {
             db.insert(DatabaseHelper.TABLE_USER_INFO, null, contentValues);
         }
@@ -343,6 +343,7 @@ public class DatabaseManager {
             info.setResult(NetworkManager.SUCCESS);
             info.setMessage(results);
             return info;
+
         }
     }
 

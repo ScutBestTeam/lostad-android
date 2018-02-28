@@ -13,7 +13,6 @@
             <option value="$PROJECT_DIR$/leancloudchatkit" />
             <option value="$PROJECT_DIR$/lib_lostad" />
             <option value="$PROJECT_DIR$/material-drawer-library" />
-            <option value="$PROJECT_DIR$/multi-image-selector" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

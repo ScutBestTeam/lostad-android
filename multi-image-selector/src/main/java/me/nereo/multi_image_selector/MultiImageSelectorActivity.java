@@ -2,7 +2,9 @@ package me.nereo.multi_image_selector;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
@@ -75,6 +77,7 @@ public class MultiImageSelectorActivity extends FragmentActivity implements Mult
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_default);
 
         Intent intent = getIntent();
@@ -179,4 +182,11 @@ public class MultiImageSelectorActivity extends FragmentActivity implements Mult
             finish();
         }
     }
+    private static final int REQUEST_EXTERNAL_STORAGE = 1;
+    private static String[] PERMISSIONS_STORAGE = {
+            "android.permission.READ_EXTERNAL_STORAGE",
+            "android.permission.WRITE_EXTERNAL_STORAGE" };
+
+
+
 }

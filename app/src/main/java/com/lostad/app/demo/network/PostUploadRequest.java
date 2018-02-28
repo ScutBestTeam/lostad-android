@@ -33,7 +33,7 @@ public class PostUploadRequest<T> extends Request<T> {
     private static final String BOUNDARY = "--------------520-13-14"; //数据分隔线
     private static final String MULTIPART_FORM_DATA = "multipart/form-data";
     private static final String TAG = "YouJoin_upload_request";
-    private static final String PARAM = "uploadedfile";
+    private static final String PARAM = "file";
 
     private Map<String, String> params;
     private Gson gson;
@@ -131,7 +131,7 @@ public class PostUploadRequest<T> extends Request<T> {
                 //Content-Disposition: form-data; name="参数的名称"; filename="上传的文件名" + "\r\n"
                 sb.append("Content-Disposition: form-data;");
                 sb.append(" name=\"");
-                sb.append(PARAM + "[" + Integer.toString(i) + "]");
+                sb.append(PARAM );
                 sb.append("\"") ;
                 sb.append("; filename=\"") ;
                 sb.append(imageInfo.getFileName()) ;
@@ -198,7 +198,7 @@ public class PostUploadRequest<T> extends Request<T> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-       // Log.v(TAG,"imageInfo =\n"+bos.toString()) ;
+       Log.v(TAG,"imageInfo =\n"+bos.toString()) ;
         return bos.toByteArray();
     }
     //Content-Type: multipart/form-data; boundary=----------8888888888888

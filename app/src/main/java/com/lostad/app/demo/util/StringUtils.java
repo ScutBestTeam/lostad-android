@@ -77,7 +77,7 @@ public class StringUtils {
     public static List<String> getPicUrlList(String pics){
         List<String> picUrlList = new ArrayList<>();
 
-        String[] picArray = pics.split(";");
+        String[] picArray = pics.split(",");
 
         Collections.addAll(picUrlList, picArray);
 

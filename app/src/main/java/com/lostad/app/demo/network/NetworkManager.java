@@ -8,6 +8,7 @@ import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.File;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,6 +29,11 @@ import com.lostad.app.demo.util.Md5Utils;
 import com.lostad.app.demo.util.StringUtils;
 
 import cn.leancloud.chatkit.LCChatKitUser;
+import okhttp3.Headers;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+
+import okhttp3.RequestBody;
 
 /**
  * 网络管理类，封装网络操作接口
@@ -84,7 +90,7 @@ public class NetworkManager {
 //    public static final String BASE_API_URL = "http://www.tekbroaden.com/youjoin-server/controllers/";
 //    public static final String BASE_API_URL = "http://110.65.7.154:8088/youjoin-server/controllers/";
 public static final String BASE_API_URL = "http://47.94.194.219:8080/test/";
-    public static final String BASE_API_URL2="http://10.0.2.2:8083/untitled/";
+//    public static final String BASE_API_URL2="http://172.20.41.1:8083/salarySendSystem/";
     public static final String API_SIGN_IN = BASE_API_URL + "signin.php";
     public static final String API_SIGN_UP = BASE_API_URL + "signup.php";
     public static final String API_UPDATE_USERINFO = BASE_API_URL + "update_userinfo.php";
@@ -96,10 +102,10 @@ public static final String BASE_API_URL = "http://47.94.194.219:8080/test/";
 public static final String API_SEND_TWEET = BASE_API_URL+ "addMoment";
 //    public static final String API_SEND_TWEET = BASE_API_URL+ "addMoment";
     public static final String API_REQUEST_TWEETS = BASE_API_URL + "getMoment";
-    public static final String API_COMMENT_TWEET = BASE_API_URL + "comment_tweet.php";
+    public static final String API_COMMENT_TWEET = BASE_API_URL + "comment_tweet";// done
     public static final String API_UPVOTE_TWEET = BASE_API_URL + "upvote_tweet.php";
     public static final String API_REQUEST_FRIEND_LIST = BASE_API_URL + "get_friendlist.php";
-    public static final String API_REQUEST_COMMENTS = BASE_API_URL + "get_comments.php";
+    public static final String API_REQUEST_COMMENTS = BASE_API_URL + "get_comments";// done
     public static final String API_REQUEST_PRIMSG_LOG = BASE_API_URL + "chat_log.php";
     public static final String API_REQUEST_PLUGIN = BASE_API_URL + "get_plugin.php";
     public static final String API_REQUEST_AROUND = BASE_API_URL + "get_aroundlist.php";
@@ -253,11 +259,10 @@ public static final String API_SEND_TWEET = BASE_API_URL+ "addMoment";
         Map<String, String> params = new HashMap<>();
         params.put(USER_ID, userId);
         params.put(TWEETS_CONTNET, content);
-//        Request request = new PostUploadRequest(API_SEND_TWEET, images, params,
-//                new TypeToken<ResultInfo>(){}.getType(), listener);
-        Request request = new PostObjectRequest(API_SEND_TWEET, params,
+        Request request = new PostUploadRequest(API_SEND_TWEET, images, params,
                 new TypeToken<ResultInfo>(){}.getType(), listener);
         NetworkManager.getRequestQueue().add(request);
+
     }
 
     /**
@@ -400,4 +405,5 @@ public static final String API_SEND_TWEET = BASE_API_URL+ "addMoment";
             //throw new RuntimeException("请先初始化mRequestQueue") ;
         return mRequestQueue ;
     }
-}
+
+    }

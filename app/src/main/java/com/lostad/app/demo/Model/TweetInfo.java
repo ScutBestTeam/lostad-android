@@ -19,7 +19,7 @@ public class TweetInfo {
      * upvote_num : 0
      * upvote_status : 0
      * tweets_content : haha i love mzz!
-     * tweets_img : http://www.tekbroaden.com/youjoin-server/upload/16/20151206032335_lufei.jpg
+     * tweets_img : http://www.tekbroaden.com/youjoin-server/upload/16/20151206032335_lufei.jpg，http://www.tekbroaden.com/youjoin-server/upload/16/20151206032335_lufei.jpg
      * tweets_time : 2017-09-06 13:23:35
      */
 

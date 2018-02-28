@@ -1,9 +1,12 @@
 package com.lostad.app.demo;
 
+import android.app.Activity;
 import android.app.Service;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 
 import com.amap.api.location.AMapLocation;
@@ -56,8 +59,9 @@ import com.lostad.app.demo.network.NetworkManager;
  * @author sszvip
  * 
  */
-public class MyApplication extends BaseApplication  implements AMapLocationListener {
-
+public class MyApplication extends BaseApplication
+		//implements AMapLocationListener {
+{
 	public Vibrator mVibrator;
 	private LoginConfig mLoginConfig;
 	private DbManager mDb;
@@ -82,7 +86,7 @@ public class MyApplication extends BaseApplication  implements AMapLocationListe
 		super.onCreate();
 		instance = this;
 		initFiles();
-		initLocation();
+//		initLocation();
 		initDb();
 		mVibrator = (Vibrator) getApplicationContext().getSystemService(Service.VIBRATOR_SERVICE);
 		//okhttp cookies设置
@@ -198,65 +202,65 @@ public class MyApplication extends BaseApplication  implements AMapLocationListe
 	/**
 	 * 初始化定位
 	 */
-	private void initLocation() {
-		// 初始化定位，只采用网络定位
-		mLocationManagerProxy = LocationManagerProxy.getInstance(this);
-		mLocationManagerProxy.setGpsEnable(false);
-		// 此方法为每隔固定时间会发起一次定位请求，为了减少电量消耗或网络流量消耗，
-		// 注意设置合适的定位时间的间隔（最小间隔支持为2000ms），并且在合适时间调用removeUpdates()方法来取消定位请求
-		// 在定位结束后，在合适的生命周期调用destroy()方法
-		// 其中如果间隔时间为-1，则定位只定一次,
-		// 在单次定位情况下，定位无论成功与否，都无需调用removeUpdates()方法移除请求，定位sdk内部会移除
-		mLocationManagerProxy.requestLocationData(
-				LocationProviderProxy.AMapNetwork, 60 * 1000, 15, this);
+//	private void initLocation() {
+//		// 初始化定位，只采用网络定位
+//		mLocationManagerProxy = LocationManagerProxy.getInstance(this);
+//		mLocationManagerProxy.setGpsEnable(false);
+//		// 此方法为每隔固定时间会发起一次定位请求，为了减少电量消耗或网络流量消耗，
+//		// 注意设置合适的定位时间的间隔（最小间隔支持为2000ms），并且在合适时间调用removeUpdates()方法来取消定位请求
+//		// 在定位结束后，在合适的生命周期调用destroy()方法
+//		// 其中如果间隔时间为-1，则定位只定一次,
+//		// 在单次定位情况下，定位无论成功与否，都无需调用removeUpdates()方法移除请求，定位sdk内部会移除
+//		mLocationManagerProxy.requestLocationData(
+//				LocationProviderProxy.AMapNetwork, 60 * 1000, 15, this);
+//
+//	}
 
-	}
+//	@Override
+//	public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
+//	}
+//
+//	@Override
+//	public void onProviderEnabled(String arg0) {
+//	}
+//
+//	@Override
+//	public void onProviderDisabled(String arg0) {
+//	}
+//
+//	@Override
+//	public void onLocationChanged(Location arg0) {
+//		// TODO Auto-generated method stub
+//	}
 
-	@Override
-	public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
-	}
-
-	@Override
-	public void onProviderEnabled(String arg0) {
-	}
-
-	@Override
-	public void onProviderDisabled(String arg0) {
-	}
-
-	@Override
-	public void onLocationChanged(Location arg0) {
-		// TODO Auto-generated method stub
-	}
-
-	@Override
-	public void onLocationChanged(AMapLocation location) {
-
-		if (location != null && location.getAMapException().getErrorCode() == 0) {
-			// 定位成功回调信息，设置相关消息
-			String province = location.getProvince();
-			String city = location.getCity();
-			String district = location.getDistrict();// 区
-			Double lat = location.getLatitude();
-			Double log = location.getLongitude();
-
-			PrefManager.saveString(getApplicationContext(),
-					IConst.KEY_GIS_PROVINCE, province);
-			PrefManager.saveString(getApplicationContext(),
-					IConst.KEY_GIS_CITY, city);
-			PrefManager.saveString(getApplicationContext(),
-					IConst.KEY_GIS_DISTRICT, district);
-
-			PrefManager.saveFloat(getApplicationContext(),
-					IConst.KEY_GIS_LATITUDE, lat.floatValue());
-			PrefManager.saveFloat(getApplicationContext(),
-					IConst.KEY_GIS_LONGTITUDE, log.floatValue());
-		} else {
-			Log.e("AmapErr", "Location ERR:"
-					+ location.getAMapException().getErrorCode());
-		}
-
-	}
+//	@Override
+//	public void onLocationChanged(AMapLocation location) {
+//
+//		if (location != null && location.getAMapException().getErrorCode() == 0) {
+//			// 定位成功回调信息，设置相关消息
+//			String province = location.getProvince();
+//			String city = location.getCity();
+//			String district = location.getDistrict();// 区
+//			Double lat = location.getLatitude();
+//			Double log = location.getLongitude();
+//
+//			PrefManager.saveString(getApplicationContext(),
+//					IConst.KEY_GIS_PROVINCE, province);
+//			PrefManager.saveString(getApplicationContext(),
+//					IConst.KEY_GIS_CITY, city);
+//			PrefManager.saveString(getApplicationContext(),
+//					IConst.KEY_GIS_DISTRICT, district);
+//
+//			PrefManager.saveFloat(getApplicationContext(),
+//					IConst.KEY_GIS_LATITUDE, lat.floatValue());
+//			PrefManager.saveFloat(getApplicationContext(),
+//					IConst.KEY_GIS_LONGTITUDE, log.floatValue());
+//		} else {
+//			Log.e("AmapErr", "Location ERR:"
+//					+ location.getAMapException().getErrorCode());
+//		}
+//
+//	}
 
 	private LocationManagerProxy mLocationManagerProxy;
 
