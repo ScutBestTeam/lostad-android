@@ -226,7 +226,7 @@ public class DatabaseManager {
         contentValues.put(DatabaseHelper.USER_PHOTO, StringUtils.getPicUrlList(info.getHeadUrl()).get(0));
         contentValues.put(DatabaseHelper.USER_SIGN, info.getUsersign());
         contentValues.put(DatabaseHelper.USER_WORK, info.getWork());
-        contentValues.put(DatabaseHelper.USER_NICKNAME, info.getNickname());
+        contentValues.put(DatabaseHelper.USER_NICKNAME, info.getName());
         contentValues.put(DatabaseHelper.FOCUS_NUM, info.getFocus_num());
         contentValues.put(DatabaseHelper.FOLLOW_NUM, info.getFollow_num());
 
@@ -407,7 +407,7 @@ public class DatabaseManager {
                 UserInfo info = new UserInfo();
                 info.setId(Integer.toString(cursor.getInt(cursor.getColumnIndex(DatabaseHelper.USER_ID))));
                 info.setUsername(cursor.getString(cursor.getColumnIndex(DatabaseHelper.USER_NAME)));
-                info.setNickname(cursor.getString(cursor.getColumnIndex(DatabaseHelper.USER_NICKNAME)));
+                info.setName(cursor.getString(cursor.getColumnIndex(DatabaseHelper.USER_NICKNAME)));
                 info.setEmail(cursor.getString(cursor.getColumnIndex(DatabaseHelper.USER_EMAIL)));
                 info.setSex(cursor.getString(cursor.getColumnIndex(DatabaseHelper.USER_SEX)));
                 info.setBirth(cursor.getString(cursor.getColumnIndex(DatabaseHelper.USER_BIRTH)));

@@ -59,7 +59,7 @@ public class PublishActivity extends BaseActivity
     LinearLayout inputLayout;
     @Bind(R.id.bottom_layout)
     LinearLayout bottomLayout;
-
+    private String type;
     ArrayList<String> mSelectPath;
     ArrayList<ImageInfo> mData = new ArrayList<>();
     EnterEmojiLayout enterLayout;
@@ -100,10 +100,11 @@ public class PublishActivity extends BaseActivity
                 }
                 showProgress(true);
                 DataPresenter.sendTweet(MyApplication.getCurrUser().getUserId(),
-                        msgEdit.getText().toString(), mData, PublishActivity.this);
+                        msgEdit.getText().toString(), mData,type ,PublishActivity.this);
             }
         });
-
+        Intent intent =getIntent();
+        this.type=intent.getStringExtra("type");
         initEnter();
 
         ThreeBounce threeBounce = new ThreeBounce();
@@ -114,6 +115,8 @@ public class PublishActivity extends BaseActivity
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+
+
     }
 
 
@@ -149,6 +152,10 @@ public class PublishActivity extends BaseActivity
     private void initEnter() {
         enterLayout = new EnterEmojiLayout(this, null);
         msgEdit = enterLayout.content;
+        if(this.type.equals("0"))
+            msgEdit.setHint("发布旅行招募");
+        else if(this.type.equals("1"))
+            msgEdit.setHint("发布闲置信息");
         enterLayout.content.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -235,8 +242,9 @@ public class PublishActivity extends BaseActivity
         }
     }
 
-    public static void actionStart(Context context) {
+    public static void actionStart(Context context,String type) {
         Intent intent = new Intent(context, PublishActivity.class);
+        intent.putExtra("type", type);
         context.startActivity(intent);
     }
 }

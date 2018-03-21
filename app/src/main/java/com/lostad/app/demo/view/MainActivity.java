@@ -96,16 +96,11 @@ public class MainActivity extends BaseActivity {
                 fragment = new IntegrationFragment();
                 break;
             case R.id.rb_1:
-                fragment = new ContactFragment();
-                Bundle b1 = new Bundle();
-                b1.putString("type", "1");
-                fragment.setArguments(b1);
+                fragment = new IntegrationFragment1();
                 break;
             case R.id.rb_2:
-                fragment = new IntegrationFragmentDiscover();
-                Bundle b2 = new Bundle();
-                b2.putString("type", "1");
-                fragment.setArguments(b2);
+                fragment = new IntegrationFragment();
+
                 break;
             case R.id.rb_3:
                 fragment = new SettingsFragment();

@@ -28,9 +28,9 @@ public class DataPresenter {
 
 
 
-    public static UserInfo requestUserInfoIDFromCache(String userId){
-        return DatabaseManager.getUserInfoById(userId);
-    }
+//    public static UserInfo requestUserInfoIDFromCache(String userId){
+//        return DatabaseManager.getUserInfoById(userId);
+//    }
 
     public static UserInfo requestUserInfoFromCache(String username){
         return DatabaseManager.getUserInfoByUserName(username);
@@ -113,8 +113,8 @@ public class DataPresenter {
                 });
     }
 
-    public static void requestTweets(String userId, String tweetId, String timeType, final GetTweets q){
-        NetworkManager.postRequestTweets(userId, tweetId, timeType
+    public static void requestTweets(String userId, String tweetId,String tweetstype ,final GetTweets q){
+        NetworkManager.postRequestTweets(userId, tweetId, tweetstype
                 , new ResponseListener<TweetInfo>() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
@@ -131,9 +131,9 @@ public class DataPresenter {
                 });
     }
 
-    public static void sendTweet(String userId, String content, List<ImageInfo> images,
+    public static void sendTweet(String userId, String content, List<ImageInfo> images,String type,
                                  final SendTweet q){
-        NetworkManager.postSendTweet(userId, content, images,
+        NetworkManager.postSendTweet(userId, content, images,type,
                 new ResponseListener<ResultInfo>() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {

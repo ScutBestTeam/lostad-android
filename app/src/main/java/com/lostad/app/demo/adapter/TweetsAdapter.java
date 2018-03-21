@@ -1,5 +1,6 @@
 package com.lostad.app.demo.adapter;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,14 +9,21 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.avos.avoscloud.im.v2.AVIMClient;
+import com.avos.avoscloud.im.v2.AVIMException;
+import com.avos.avoscloud.im.v2.callback.AVIMClientCallback;
 import com.lostad.app.demo.Model.ResultInfo;
 import com.lostad.app.demo.manager.DatabaseManager;
+import com.lostad.app.demo.view.MainActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import cn.leancloud.chatkit.LCChatKit;
+import cn.leancloud.chatkit.activity.LCIMConversationActivity;
 import de.hdodenhof.circleimageview.CircleImageView;
 import com.lostad.app.demo.DataPresenter ;
 import com.lostad.app.demo.R;
@@ -35,6 +43,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
 
     public OnItemClickListener itemClickListener;
 
+    public OnItemClickListener OnContactClick;
     private List<TweetInfo.TweetsEntity> dataList;
 
     public TweetsAdapter(List<TweetInfo.TweetsEntity> data){
@@ -44,16 +53,19 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     public void setOnItemClickListener(OnItemClickListener itemClickListener){
         this.itemClickListener = itemClickListener;
     }
+    public void setOnContactClick(OnItemClickListener OnContactClick){
+        this.OnContactClick = OnContactClick;
+    }
 
     public interface OnItemClickListener{
         void onItemClick(View view, int position);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        public CheckBox btnLike;
+//        public CheckBox btnLike;
         public ImageButton btnComments;
         public TextView nickname;
-        public TextView likeCount;
+//        public TextView likeCount;
         public TextView commentCount;
         public TextView tweetContent;
         public TextView time;
@@ -62,17 +74,22 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
 
         public ViewHolder(View itemView){
             super(itemView);
-            likeCount = (TextView) itemView.findViewById(R.id.like_count);
+//            likeCount = (TextView) itemView.findViewById(R.id.like_count);
             commentCount = (TextView) itemView.findViewById(R.id.comment_count);
             tweetContent = (TextView) itemView.findViewById(R.id.content);
             avatar = (CircleImageView) itemView.findViewById(R.id.avatar);
-            btnLike = (CheckBox) itemView.findViewById(R.id.btnLike);
+//            btnLike = (CheckBox) itemView.findViewById(R.id.btnLike);
             btnComments = (ImageButton) itemView.findViewById(R.id.btnComments);
             gridView = (AutoHeightGridView) itemView.findViewById(R.id.gridView);
             nickname = (TextView) itemView.findViewById(R.id.username);
             time = (TextView) itemView.findViewById(R.id.time);
+            avatar.setOnClickListener(new View.OnClickListener() {
+                                          @Override
+                                          public void onClick(View view) {
+                                              OnContactClick.onItemClick(view,getPosition());
+                                          };
+        });
         }
-
         //通过接口回调来实现点击事件
         @Override
         public void onClick(View v){
@@ -80,6 +97,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
                 itemClickListener.onItemClick(v, getPosition());
             }
         }
+
 
     }
 
@@ -140,7 +158,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
                     .resize(200, 200)
                     .centerCrop()
                     .into(viewHolder.avatar);
-            viewHolder.nickname.setText(info.getNickname());
+            viewHolder.nickname.setText(info.getName());
         }else {
             NetworkManager.postRequestUserInfo(dataList.get(location).getFriend_id(),
                     new ResponseListener<UserInfo>() {
@@ -156,7 +174,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
                                     .resize(200, 200)
                                     .centerCrop()
                                     .into(viewHolder.avatar);
-                            viewHolder.nickname.setText(info.getNickname());
+                            viewHolder.nickname.setText(info.getName());
                             DatabaseManager.addUserInfo(info);
                         }
                     });

@@ -5,18 +5,26 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lostad.app.base.view.fragment.BaseFragment;
+import com.lostad.app.demo.DataPresenter;
+import com.lostad.app.demo.Model.UserInfo;
 import com.lostad.app.demo.MyApplication;
 import com.lostad.app.demo.R;
+import com.lostad.app.demo.network.NetworkManager;
+import com.lostad.app.demo.util.StringUtils;
 import com.lostad.app.demo.view.LoginActivity;
+import com.lostad.app.demo.view.TweetDetailActivity;
 import com.lostad.app.demo.view.my.FormMyInfoActivity;
 import com.lostad.app.demo.view.my.ListMyTourActivity;
 import com.lostad.applib.core.MyCallback;
 import com.lostad.applib.entity.ILoginConfig;
 import com.lostad.applib.util.DialogUtil;
+import com.squareup.picasso.Picasso;
 
+import org.xutils.image.ImageOptions;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
@@ -26,13 +34,14 @@ import org.xutils.x;
  * @author sszvip
  * 
  */
-public class SettingsFragment extends BaseFragment {
+public class SettingsFragment extends BaseFragment implements DataPresenter.GetUserInfo {
 
 	private MyApplication mApp;
 
 	@ViewInject(R.id.tv_name)
 	private TextView tv_name;
-
+	@ViewInject(R.id.iv_head)
+	private ImageView iv_head;
 	@ViewInject(R.id.tv_phone)
 	private TextView tv_phone;
 
@@ -51,19 +60,56 @@ public class SettingsFragment extends BaseFragment {
 
 
 	@Override
+	public void onGetUserInfo(UserInfo info) {
+		ImageOptions mImageOptions = new ImageOptions.Builder()
+				// 加载中或错误图片的ScaleType
+				//.setPlaceholderScaleType(ImageView.ScaleType.MATRIX)
+				// 默认自动适应大小
+				// .setSize(...)
+				.setFailureDrawableId(R.mipmap.load_fail)
+				.setLoadingDrawableId(R.mipmap.ic_launcher)
+				.setIgnoreGif(false)
+				.setUseMemCache(true)
+				.setImageScaleType(ImageView.ScaleType.CENTER).build();
+
+		x.image().bind(iv_head, info.getImg_url(), mImageOptions);
+		tv_phone.setText(info.getPhone());
+		tv_name.setText(info.getName());
+	}
+
+	@Override
 	public void onResume() {
 		super.onResume();
-		mLogin = getLoginConfig();
-		if(mLogin!=null){
-			tv_name.setText(getLoginConfig().getName());
-			tv_phone.setText(getLoginConfig().getPhone());
-			btn_quit.setText("退出");
-		}else{
-			tv_name.setText("未登陆");
-			tv_phone.setText("手机号未知");
-			btn_quit.setText("注册/登陆");
-		}
+//		mLogin = getLoginConfig();
+//		if(mLogin!=null){
+//			tv_name.setText(getLoginConfig().getName());
+//			tv_phone.setText(getLoginConfig().getPhone());
+//			btn_quit.setText("退出");
+//		}else{
+//			tv_name.setText("未登陆");
+//			tv_phone.setText("手机号未知");
+//			btn_quit.setText("注册/登陆");
+//		}
+		UserInfo userInfo = DataPresenter.requestUserInfoFromCache(MyApplication.getCurrUser().getUserId());
+		if (false) {
 
+			ImageOptions mImageOptions = new ImageOptions.Builder()
+					// 加载中或错误图片的ScaleType
+					//.setPlaceholderScaleType(ImageView.ScaleType.MATRIX)
+					// 默认自动适应大小
+					// .setSize(...)
+					.setFailureDrawableId(R.mipmap.load_fail)
+					.setLoadingDrawableId(R.mipmap.ic_launcher)
+					.setIgnoreGif(false)
+					.setUseMemCache(true)
+					.setImageScaleType(ImageView.ScaleType.CENTER).build();
+
+			x.image().bind(iv_head, userInfo.getImg_url(), mImageOptions);
+			tv_phone.setText(userInfo.phone);
+			tv_name.setText(userInfo.getName());
+		} else {
+			DataPresenter.requestUserInfoById(MyApplication.getCurrUser().getUserId(), SettingsFragment.this);
+		}
 	}
 
 	@Event(R.id.ll_userinfo)

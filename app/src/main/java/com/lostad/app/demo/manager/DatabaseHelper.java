@@ -9,7 +9,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     private static DatabaseHelper mHelper;
 
     public static final String DB_NAME = "youjoin_db";
-    public static final int DB_VERSION = 1;
+    public static final int DB_VERSION = 4;
     public static final String DROP_TABLE = "drop table if exists ";
 
     public static final String TABLE_USER_INFO = "yj_user_info";
@@ -45,17 +45,17 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     private static final String CREATE_TABLE_USER_INFO = "create table if not exists "
             + TABLE_USER_INFO
             + " (" + USER_ID + " integer primary key, "
-            + USER_NAME + " text not null, "
-            + USER_EMAIL + " text not null, "
-            + USER_SEX + " text not null, "
-            + USER_BIRTH + " date not null, "
-            + USER_LOCATION + " text not null, "
-            + USER_PHOTO + " text not null, "
-            + USER_SIGN + " text not null, "
-            + USER_WORK + " text not null, "
-            + USER_NICKNAME + " text not null, "
-            + FOCUS_NUM + " integer not null, "
-            + FOLLOW_NUM + " integer not null)";
+            + USER_NAME + " text , "
+            + USER_EMAIL + " text , "
+            + USER_SEX + " text , "
+            + USER_BIRTH + " date , "
+            + USER_LOCATION + " text , "
+            + USER_PHOTO + " text , "
+            + USER_SIGN + " text , "
+            + USER_WORK + " text , "
+            + USER_NICKNAME + " text , "
+            + FOCUS_NUM + " integer , "
+            + FOLLOW_NUM + " integer )";
 
     public static final String FRIEND_ID = "friend_id";
     public static final String USER1_ID = "user1_id";
@@ -85,8 +85,8 @@ public class DatabaseHelper extends SQLiteOpenHelper{
             + TWEETS_IMG + " text, "
             + TWEETS_TIME + " timestamp not null, "
             + COMMENT_NUM + " integer not null, "
-            + UPVOTE_NUM + " integer not null, "
-            + UPVOTE_STATUS + " integer not null )";
+            + UPVOTE_NUM + " integer , "
+            + UPVOTE_STATUS + " integer  )";
 
     public static final String PRIMSG_ID = "primsg_id";
     public static final String SENDER_ID = "sender_id";

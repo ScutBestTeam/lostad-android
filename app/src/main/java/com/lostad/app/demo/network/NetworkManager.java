@@ -237,12 +237,12 @@ public static final String API_SEND_TWEET = BASE_API_URL+ "addMoment";
      * @param tweetId 基准动态id（以此条动态作为基准，向前或向后获取）
      * @param listener ResponseListener
      */
-    public static void postRequestTweets(String userId, String tweetId, String timeType,
+    public static void postRequestTweets(String userId, String tweetId ,String tweetType,
                                          ResponseListener listener){
         Map<String, String> params = new HashMap<>();
         params.put(TWEET_ID, tweetId);
         params.put(USER_ID, userId);
-        params.put(TIME_TYPE, timeType);
+        params.put("type", tweetType);
         Request request = new PostObjectRequest(API_REQUEST_TWEETS,
                 params, new TypeToken<TweetInfo>(){}.getType(),
                 listener);
@@ -254,11 +254,12 @@ public static final String API_SEND_TWEET = BASE_API_URL+ "addMoment";
      * 发送动态接口
      * @param listener ResponseListener
      */
-    public static void postSendTweet(String userId, String content, List<ImageInfo> images,
+    public static void postSendTweet(String userId, String content, List<ImageInfo> images,String type,
                                      ResponseListener listener){
         Map<String, String> params = new HashMap<>();
         params.put(USER_ID, userId);
         params.put(TWEETS_CONTNET, content);
+        params.put("type", type);
         Request request = new PostUploadRequest(API_SEND_TWEET, images, params,
                 new TypeToken<ResultInfo>(){}.getType(), listener);
         NetworkManager.getRequestQueue().add(request);

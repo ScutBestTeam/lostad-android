@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.lostad.app.base.util.DownloadUtil;
@@ -19,20 +20,29 @@ import com.lostad.app.base.view.component.FormNumActivity;
 import com.lostad.app.base.view.component.FormTextActivity;
 import com.lostad.app.base.view.component.FormTextChinaeseActivity;
 import com.lostad.app.demo.IConst;
+import com.lostad.app.demo.Model.ImageInfo;
 import com.lostad.app.demo.R;
 import com.lostad.app.demo.entity.LoginConfig;
 //import com.lostad.app.demo.entity.UserInfo;
 import com.lostad.app.demo.Model.UserInfo;
+import com.lostad.app.demo.view.PublishActivity;
 import com.lostad.applib.core.MyCallback;
 import com.lostad.applib.util.DialogUtil;
 import com.lostad.applib.util.FileDataUtil;
+import com.luck.picture.lib.PictureSelector;
+import com.luck.picture.lib.config.PictureConfig;
+import com.luck.picture.lib.config.PictureMimeType;
+import com.luck.picture.lib.entity.LocalMedia;
+import com.squareup.picasso.Picasso;
 
 import org.xutils.ex.DbException;
+import org.xutils.image.ImageOptions;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
 import java.io.File;
+import java.util.List;
 
 public class FormMyInfoActivity extends BaseActivity {
     @ViewInject(R.id.toolbar)
@@ -98,9 +108,20 @@ public class FormMyInfoActivity extends BaseActivity {
 
     @Event(R.id.iv_head)
     private void onClickHead(View v) {
-        ImageChooserUtil.showPicturePicker(this, true);
+//        ImageChooserUtil.showPicturePicker(this, true);
 //      Intent i = new Intent(this,HeadGridActivity.class);
 //      startActivityForResult(i, 100);
+        PictureSelector.create(FormMyInfoActivity.this)
+                .openGallery(PictureMimeType.ofImage())//全部.PictureMimeType.ofAll()、图片.ofImage()、视频.ofVideo()、音频.ofAudio(
+                .maxSelectNum(9)// 最大图片选择数量 int
+                .imageSpanCount(4)// 每行显示个数 int
+                .selectionMode(PictureConfig.SINGLE)// 多选 or 单选 PictureConfig.MULTIPLE or PictureConfig.SINGLE
+                .previewImage(false)// 是否可预览图片 true or false
+                .isCamera(true)// 是否显示拍照按钮 true or false
+                .isZoomAnim(true)// 图片列表点击 缩放效果 默认true
+                .sizeMultiplier(0.5f)// glide 加载图片大小 0~1之间 如设置 .glideOverride()无效
+                .setOutputCameraPath("/CustomPath")// 自定义拍照保存路径,可不填
+                .forResult(PictureConfig.CHOOSE_REQUEST);//结果回调onActivityResult code
     }
 
     //	public void onClickNext(View v) {
@@ -232,24 +253,35 @@ public class FormMyInfoActivity extends BaseActivity {
 //                    update(mSysConfig);
 //                }
                 break;
-            default:
-                ImageChooserUtil.onActivityResult(ctx, requestCode, resultCode, data, new ImageChooserUtil.PicCallback() {
-                    @Override
-                    public void onPicSelected(Bitmap bitmap) {
-                        //System.out.println(bitmap);
-                        iv_head.setImageBitmap(bitmap);
-                        String fileName = FileDataUtil.createJpgFileName(getLoginConfig().getUserId() + "");
-                        mFileHead = ImageTools.savePhotoToSDCard(bitmap, IConst.PATH_ROOT, fileName);
+            case PictureConfig.CHOOSE_REQUEST:
 
-                        if (mFileHead != null && mFileHead.exists()) {
-                            uploadHead(mFileHead);
-                        } else {
-                            DialogUtil.showAlert(ctx, "文件不存在！！！", null);
+                if (requestCode == PictureConfig.CHOOSE_REQUEST) {
+                    if (resultCode == RESULT_OK) {
+                        List<LocalMedia> selectList = PictureSelector.obtainMultipleResult(data);
+//                StringBuilder sb = new StringBuilder();
+                        for (LocalMedia p : selectList) {
+//                    sb.append(p);
+//                    sb.append("\n")
+
+                            ImageOptions mImageOptions = new ImageOptions.Builder()
+                                    // 加载中或错误图片的ScaleType
+                                    //.setPlaceholderScaleType(ImageView.ScaleType.MATRIX)
+                                    // 默认自动适应大小
+                                    // .setSize(...)
+                                    .setFailureDrawableId(R.mipmap.load_fail)
+                                    .setLoadingDrawableId(R.mipmap.ic_launcher)
+                                    .setIgnoreGif(false)
+                                    .setUseMemCache(true)
+                                    .setImageScaleType(ImageView.ScaleType.CENTER).build();
+
+                        x.image().bind(iv_head, p.getPath(), mImageOptions);
                         }
+                        //yjPublishEdit.setText(sb.toString());
                     }
-                });
-        }
-        super.onActivityResult(requestCode, resultCode, data);
+                }
+            }
+
+
     }
 
     private void initUI(final UserInfo config) {
@@ -348,5 +380,5 @@ public class FormMyInfoActivity extends BaseActivity {
 
     }
 
-
+//DownloadUtil.loadImage(iv_head, url,R.drawable.head_default, R.drawable.head_default, R.drawable.head_default);
 }

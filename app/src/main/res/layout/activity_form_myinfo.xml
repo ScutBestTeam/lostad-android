@@ -463,6 +463,7 @@
                 android:scaleType="centerCrop"
                 android:src="@mipmap/head_default" />
 
+
         </RelativeLayout>
     </ScrollView>
 

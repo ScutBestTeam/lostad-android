@@ -106,38 +106,38 @@
                 android:layout_height="1dp"
                 android:layout_weight="1"/>
 
-            <CheckBox
-                android:id="@+id/btnLike"
-                android:layout_width="@dimen/tweets_list_item_button_size"
-                android:layout_height="@dimen/tweets_list_item_button_size"
-                android:button="@null"
-                android:background="@drawable/checkbox_upvote"
-                android:checked="true"/>
+            <!--<CheckBox-->
+                <!--android:id="@+id/btnLike"-->
+                <!--android:layout_width="@dimen/tweets_list_item_button_size"-->
+                <!--android:layout_height="@dimen/tweets_list_item_button_size"-->
+                <!--android:button="@null"-->
+                <!--android:background="@drawable/checkbox_upvote"-->
+                <!--android:checked="true"/>-->
             <!--android:background="@drawable/btn_feed_action"-->
 
-            <TextSwitcher
-                android:id="@+id/tsLikesCounter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="10dp"
-                android:layout_gravity="center">
+            <!--<TextSwitcher-->
+                <!--android:id="@+id/tsLikesCounter"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="5dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:layout_gravity="center">-->
                 <!--android:inAnimation="@anim/slide_in_likes_counter"
                                     android:outAnimation="@anim/slide_out_likes_counter"-->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/like_count"
-                    android:textSize="10sp"
-                    android:layout_gravity="center_vertical"
-                    tools:text="13"
-                    android:textColor="@color/grey"/>
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/like_count"-->
+                    <!--android:textSize="10sp"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--tools:text="13"-->
+                    <!--android:textColor="@color/grey"/>-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/grey" />
-            </TextSwitcher>
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textColor="@color/grey" />-->
+            <!--</TextSwitcher>-->
 
             <ImageButton
                 android:id="@+id/btnComments"

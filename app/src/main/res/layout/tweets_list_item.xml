@@ -98,47 +98,47 @@
         android:layout_gravity="center_horizontal">
 
 
-        <CheckBox
-            android:id="@+id/btnLike"
-            android:layout_width="@dimen/tweets_list_item_button_size"
-            android:layout_height="@dimen/tweets_list_item_button_size"
-            android:button="@null"
-            android:background="@drawable/checkbox_upvote"
-            android:checked="true"/>
+        <!--<CheckBox-->
+            <!--android:id="@+id/btnLike"-->
+            <!--android:layout_width="@dimen/tweets_list_item_button_size"-->
+            <!--android:layout_height="@dimen/tweets_list_item_button_size"-->
+            <!--android:button="@null"-->
+            <!--android:background="@drawable/checkbox_upvote"-->
+            <!--android:checked="true"/>-->
         <!--android:background="@drawable/btn_feed_action"-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            android:text="报名"
-            android:textColor="@color/grey"
-            android:textSize="10sp" />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:layout_marginStart="8dp"-->
+            <!--android:text="报名"-->
+            <!--android:textColor="@color/grey"-->
+            <!--android:textSize="10sp" />-->
 
-        <TextSwitcher
-            android:id="@+id/tsLikesCounter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_gravity="center_vertical">
-            <!--android:inAnimation="@anim/slide_in_likes_counter"
-                                android:outAnimation="@anim/slide_out_likes_counter"-->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/like_count"
-                tools:text="13"
-                android:textSize="10sp"
-                android:textColor="@color/grey"/>
+        <!--<TextSwitcher-->
+            <!--android:id="@+id/tsLikesCounter"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:layout_gravity="center_vertical">-->
+            <!--&lt;!&ndash;android:inAnimation="@anim/slide_in_likes_counter"-->
+                                <!--android:outAnimation="@anim/slide_out_likes_counter"&ndash;&gt;-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/like_count"-->
+                <!--tools:text="13"-->
+                <!--android:textSize="10sp"-->
+                <!--android:textColor="@color/grey"/>-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/grey"
-                android:textSize="10sp"/>
-        </TextSwitcher>
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="@color/grey"-->
+                <!--android:textSize="10sp"/>-->
+        <!--</TextSwitcher>-->
 
         <View
             android:layout_width="1dp"

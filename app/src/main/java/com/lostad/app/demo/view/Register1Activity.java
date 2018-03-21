@@ -4,14 +4,19 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.avos.avoscloud.im.v2.AVIMClient;
+import com.avos.avoscloud.im.v2.AVIMException;
+import com.avos.avoscloud.im.v2.callback.AVIMClientCallback;
 import com.google.gson.Gson;
 import com.lostad.app.base.view.BaseActivity;
 import com.lostad.app.demo.IConst;
+import com.lostad.app.demo.MyApplication;
 import com.lostad.app.demo.R;
 import com.lostad.app.demo.entity.LoginConfig;
 import com.lostad.app.demo.manager.UserManager;
@@ -20,6 +25,7 @@ import com.lostad.applib.core.MyCallback;
 import com.lostad.applib.entity.BaseBeanRsult;
 import com.lostad.applib.util.DialogUtil;
 import com.lostad.applib.util.LogMe;
+import com.lostad.applib.util.Validator;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -30,6 +36,7 @@ import org.xutils.x;
 import java.util.HashMap;
 import java.util.Map;
 
+import cn.leancloud.chatkit.LCChatKit;
 import okhttp3.Call;
 
 /**
@@ -125,9 +132,13 @@ public class Register1Activity extends BaseActivity {
         doregister(mPhone,name,mPhone,email,psw);
     }
 
-    public void doregister(String username, String name, String phone, String email, final String password) {
+    public void doregister(final String username, String name, String phone, String email, final String password) {
         try {
             Map m = new HashMap();
+            final LoginConfig mLoginConfig = new LoginConfig();
+            mLoginConfig.setPhone(username);
+            mLoginConfig.setId(username);
+            mLoginConfig.setPassword(password);
             m.put("USERNAME", username);
             m.put("PHONE", phone);
             m.put("NAME", name);
@@ -151,25 +162,28 @@ public class Register1Activity extends BaseActivity {
                         public void onResponse(String response, int id) {
                             Map result = new Gson().fromJson(response, HashMap.class);
                             if (result.get("result").equals("01")) {
-                                runOnUiThread(new Runnable() {
+                                LoginTask loginTask = new LoginTask(Register1Activity.this, mLoginConfig, new MyCallback<Boolean>() {
                                     @Override
-                                    public void run() {
-                                        DialogUtil.dismissProgress();
-                                         //注册成功后直接登陆
-                                        LoginConfig lc=new LoginConfig();
-                                            lc.password = password;
-                                            lc.phone = mPhone;
-                                            LoginTask lt = new LoginTask(Register1Activity.this, lc, new MyCallback<Boolean>() {
+                                    public void onCallback(Boolean success) {
+                                        if (success) {
+                                            LCChatKit.getInstance().open(username, new AVIMClientCallback() {
                                                 @Override
-                                                public void onCallback(Boolean success) {
-                                                    if (success) {
-                                                        toMainActivty();
+                                                public void done(AVIMClient avimClient, AVIMException e) {
+                                                    if (null == e) {
+                                                        Intent i = new Intent(Register1Activity.this,MainActivity.class);
+                                                        startActivity(i);
+                                                        finish();
+
+                                                    } else {
+                                                        Toast.makeText(Register1Activity.this, e.toString(), Toast.LENGTH_SHORT).show();
                                                     }
                                                 }
                                             });
-                                            lt.execute();
+                                            MyApplication.setCurrUser(mLoginConfig);
+                                        }
                                     }
                                 });
+                                loginTask.execute();
                             }
                             if (result.get("result").equals("00")){
                                 DialogUtil.dismissProgress();

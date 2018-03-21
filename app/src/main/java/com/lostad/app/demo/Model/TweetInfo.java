@@ -50,6 +50,15 @@ public class TweetInfo {
         private String tweet_content;
         private String tweet_img;
         private String tweet_time;
+        private String tweet_type;
+        public String getTweet_type() {
+            return tweet_type;
+        }
+
+        public void setTweet_type(String tweet_type) {
+            this.tweet_type = tweet_type;
+        }
+
 
         public void setFriend_id(String friend_id) {
             this.friend_id = friend_id;

@@ -70,7 +70,7 @@ public class CommentsAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        UserInfo info = DataPresenter.requestUserInfoIDFromCache((dataList.get(position).getFriend_id()));
+        UserInfo info = DataPresenter.requestUserInfoFromCache((dataList.get(position).getFriend_id()));
         if(info.getResult().equals(NetworkManager.SUCCESS)
                 && info.getImg_url() != null){
             Picasso.with(context)

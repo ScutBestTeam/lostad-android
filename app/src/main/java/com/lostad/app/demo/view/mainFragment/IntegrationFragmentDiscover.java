@@ -3,6 +3,7 @@ package com.lostad.app.demo.view.mainFragment;
 /**
  * Created by zanjie on 2017/9/23.
  */
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -22,6 +23,9 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import cn.leancloud.chatkit.activity.LCIMConversationActivity;
+import cn.leancloud.chatkit.utils.LCIMConstants;
+
 import com.lostad.app.demo.DataPresenter ;
 import com.lostad.app.demo.R;
 import com.lostad.app.demo.MyApplication ;
@@ -40,7 +44,8 @@ public class IntegrationFragmentDiscover extends BaseFragment
     RecyclerView tweetsRecyclerList;
     @Bind(R.id.add_tweets_fab)
     FloatingActionButton addTweetsFab;
-
+    //动态类型
+    String type;
     List<TweetInfo.TweetsEntity> tweetsList = new ArrayList<>();
     TweetsAdapter tweetsAdapter = new TweetsAdapter(tweetsList);
     @Bind(R.id.refresher)
@@ -60,13 +65,13 @@ public class IntegrationFragmentDiscover extends BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tweets, container, false);
-
+        this.type= getArguments().getString("type");
         ButterKnife.bind(this, view);
         EventBus.getDefault().register(this);
         addTweetsFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PublishActivity.actionStart(getActivity());
+                PublishActivity.actionStart(getActivity(),IntegrationFragmentDiscover.this.type);
             }
         });
 
@@ -88,7 +93,16 @@ public class IntegrationFragmentDiscover extends BaseFragment
         tweetsRecyclerList.setItemAnimator(new DefaultItemAnimator());
         tweetsRecyclerList.setAdapter(tweetsAdapter);
         refreshData();
-
+        tweetsAdapter.setOnContactClick(new TweetsAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                // 点击联系人，直接跳转进入聊天界面
+                Intent intent = new Intent(getContext(), LCIMConversationActivity.class);
+                // 传入对方的 Id 即可
+                intent.putExtra(LCIMConstants.PEER_ID,tweetsList.get(position).getFriend_id());
+                getContext().startActivity(intent);
+            }
+        });
         return view;
     }
 
@@ -109,7 +123,7 @@ public class IntegrationFragmentDiscover extends BaseFragment
     private void refreshData() {
         refresher.setRefreshing(true);
         DataPresenter.requestTweets(MyApplication.getCurrUser().getUserId(),
-                "0", NetworkManager.TIME_NEW, IntegrationFragmentDiscover.this);
+                "0",type, IntegrationFragmentDiscover.this);
     }
 
     private RecyclerItemClickListener.OnItemClickListener onItemClickListener =

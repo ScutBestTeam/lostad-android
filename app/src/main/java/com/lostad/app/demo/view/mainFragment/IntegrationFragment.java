@@ -43,7 +43,7 @@ public class IntegrationFragment extends BaseFragment {
 	// 屏幕宽度
 	private int screenWidth;
 	// 三个tab页面的列表
-	private List<ListWaterFragment> fragments = new ArrayList<ListWaterFragment>();
+	private List<IntegrationFragmentDiscover> fragments = new ArrayList<IntegrationFragmentDiscover>();
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
@@ -58,8 +58,8 @@ public class IntegrationFragment extends BaseFragment {
 	}
 
 	private void initTabs(LayoutInflater inflater) {
-        for(int i=0;i<3;i++){
-			ListWaterFragment f = new ListWaterFragment();
+        for(int i=0;i<2;i++){
+			IntegrationFragmentDiscover f = new IntegrationFragmentDiscover();
 			Bundle b = new Bundle();
 			b.putString("type",i+"");
 			f.setArguments(b);
@@ -68,12 +68,11 @@ public class IntegrationFragment extends BaseFragment {
 		}
 
 		int width = screenWidth / fragments.size();
-		View v1 = createTabItem(inflater,width, "全部项目");
-		View v2 = createTabItem(inflater,width, "附近项目");
-		View v3 = createTabItem(inflater,width, "我关注的");
+		View v1 = createTabItem(inflater,width, "旅游招募");
+		View v2 = createTabItem(inflater,width, "闲置信息");
+
 		ll_tabItems.addView(v1);
 		ll_tabItems.addView(v2);
-		ll_tabItems.addView(v3);
 		// 初始化tab选中后的下划线
 		initTabUnderLine();
 		//FragmentManager mgr = getActivity().getSupportFragmentManager();

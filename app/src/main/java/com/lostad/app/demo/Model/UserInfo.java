@@ -72,7 +72,7 @@ public class UserInfo implements Parcelable {
         this.name = name;
     }
     public String getNickname() {
-        return name;
+        return nickname;
     }
     public void setNickname(String nickname) {
         this.nickname = nickname;
